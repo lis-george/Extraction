@@ -300,3 +300,64 @@ for index, snippet in enumerate(code_snippets, 1):
 
 # returns the snippets as a list
 #code_snippets
+
+# Spelling Correction
+!pip install spellchecker
+!pip install fuzzywuzzy
+!pip install pyspellchecker
+
+from spellchecker import SpellChecker
+from fuzzywuzzy import fuzz
+
+# Function to correct OCR errors
+def correct_ocr_errors(text: str):
+    spell = SpellChecker()
+    words = text.split()
+    corrected_words = []
+
+    for word in words:
+        # Check if the word is misspelled
+        if word.isalpha() and word.lower() not in spell:
+            # Get the most likely correction
+            correction = spell.correction(word.lower())
+            # Use fuzzy matching to decide if the correction is likely to be accurate
+            if fuzz.ratio(word.lower(), correction) > 80:  # Adjust threshold as needed
+                corrected_words.append(correction)
+            else:
+                corrected_words.append(word)
+        else:
+            corrected_words.append(word)
+
+    corrected_text = " ".join(corrected_words)
+    return corrected_text
+
+# Function to extract code snippets
+def extract_code_snippets(text: str):
+    # Regex pattern to capture code snippets
+    pattern = re.compile(r'(procedure\s+(?:[A-Z0-9]+(?:_[A-Z0-9]+)*(?:[_\s][A-Z0-9]+)*|[A-Z0-9]+\s[A-Z0-9]+(?:\s[A-Z0-9]+)*)\n.*?\nend\s+\w+.*?\n)', re.DOTALL | re.IGNORECASE)
+
+    snippets = pattern.findall(text)
+    return snippets
+
+# Load the PDF and extract text
+pdf_path = '/content/ARINC653_P1_5_201912.pdf'
+reader = PdfReader(pdf_path)
+
+# Combine text from all pages to ensure continuity
+pdf_text = "".join([page.extract_text() for page in reader.pages])
+
+# Correct OCR errors in the extracted text
+corrected_text = correct_ocr_errors(pdf_text)
+
+# Extract code snippets
+code_snippets = extract_code_snippets(corrected_text)
+# Only the first 64 are code snippets, the rest are some sort of schema
+# Configure error handler should be the last snippet
+code_snippets = code_snippets[:67]
+
+# Print code snippets with proper formatting
+for index, snippet in enumerate(code_snippets, 1):
+    print(f"Snippet {index}:\n{'-'*20}\n{snippet.strip()}\n")
+
+# Returns the snippets as a list
+# code_snippets
