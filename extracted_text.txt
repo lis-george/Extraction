@@ -1,0 +1,2989 @@
+flflINC
+AVIONICS APPLICATION SOFTWARE
+STANDARD INTERFACE
+PART 1
+REQUIRED SERVICES
+ARINC SPECIFICATION 653P1-5
+AVIONICS APPLICATION SOFTWARE STANDARD
+INTERFACE SET
+PUBLISHED: December23, 2019
+Pr.pared byAEEC
+Publisirnd by
+SAE-ITC
+117Q1 MeIlord BIvd., Suite 120, Bowle, Marytand 20716 USA
+CopyiighI ARINC iMuiiiy Mbvihe,
+Pro‘~d.d byIHSMrn*4 under oben,. WOOARINC UcenswO~hI Defence GmbH &Co.KGUbed~ge&9%S393~4. UeenHormensbilL
+Hasproduciion annelwarbin pennIU.d ellicut licens. from INS HofIonRenei.. 03fl0‘2020 0157.49 MDTDISCLAIMER
+THIS DOCUMENT 15BASED ON MATERIAL SUBMITTED 8VVARIOUS
+PARTICIPANTS DURING THE DRAF11NG PROCESS. NEITHER AEEC, AMC,
+FSEMC NOR SAE-ITC HAS MADE ANY DETERMINATION WHETHER THESE
+MATERIALS COULD BESUBJECT TOVALID CLAIMS OFPATENT! COPYRIGHT
+OR OTHER PROPRIETARV RIGHTS 8V THIRD PARTIES! AND NO
+REPRESENTATION ORWARRANTY, EXPRESS ORIMPLIED, 5MADE INTHIS
+REGARD.
+ARINC INDUSTRY ACTIVITIES USES REASONABLE EFFORTS TODEVELOP
+AND MAINTAIN THESE DOCUMENTS. HOWEVER, NOCERTIFICATION OR
+WARRANTV ISMADE ASTOTHE TECHNICAL ACCURACY ORSUFFICIENCV
+OFTHE DOCUMENTS, THE ADEQUACY, MERCHANTABILITY, FITNESS FOR
+INTENDED PURPOSE ORSAFETY OFANY PRODUCTS, COMPONENTS, OR
+SYSTEMS DESIGNED, TESTED, RATED, INSTALLED OR OPERATED IN
+ACCORDANCE WITH ANY ASPECT OFTHIS DOCUMENT ORTHE ABSENCE OF
+RISK ORHAZARD ASSOCIATED WITH SUCH PRODUCTS, COMPONENTS, OR
+SYSTEMS. THE USER OFTHIS DOCUMENT ACKNOWLEDGES TI-IAT lTSI-IALL
+BESOLELV RESPONSIBLE FOR ANY LOSS, CLAIM ORDAMAGE THAT lTMAY
+INCUR INCONNECTION WITH ITSUSEOF ORRELIANCE ONTHIS DOCUMENT,
+AND SHALL HOLD SAE-ITC, AEEC, AMC, FSEMC AND ANY PARTY THAT
+PARTICIPATED INTHE DRAFTING OFTHE DOCUMENT I-IARMLESS AGAINST
+ANY CLAIM ARISING FROM ITSUSE OFTHE STANDARD!
+THE USE INTHIS DOCUMENT OFANV TERM, SUCH ASSHALL ORMUST, IS
+NOT INTENDED TOAFFECT THE STATUS OFTHIS DOCUMENT ASA
+VOLUNTARY STANDARD OB INANY WAV TO MODIFV THE ABOVE
+DISCLAIMER. NOTHING HEREIN SHALL BEDEEMED TOREQUIRE ANY
+PROVIDER OFEQUIPMENT TOINCORPORATE ANY ELEMENT OFTHIS
+STANDARD INITSPRODUCT. HOWEVER, VENDORS WHICH REPRESENT
+TI-IAT THEIR PRODUCTS ARE COMPLIANT WTH THIS STANDARD SHALL BE
+DEEMED ALSO TOHAVE REPRESENTED THAT THEIR PRODUCTS CONTAIN
+ORCONFORM TOTHE FEATURES THATARE DESCRIBED ASMUST OBSHALL
+INTHE STANDARD.
+ANY USE OFORRELIANCE ONTHIS DOCUMENT SHALL CONSTITUTE AN
+ACCEPTANCE THEREOF !!~5SAND BESUBJECT TOTHIS DISCLAIMER.
+THE AVIONICS APPLICATION SOFTWARE STANDARD INTERFACE SET
+653P0 Avionics Application Software Standard Interface Part0—Overview ofARINC 653
+653P1 AvionicsApplication Software Standard Interface Part 1—Required Services
+653P2 Avionics Application Software Standard Interface Part 2—Extended Services
+653P3A Avionics Application Software Standard Interface Part3A —Conformity TestSpecifications torARINC 653
+Required Services
+653P3B Avionics Application Software Standard Interface Part3B —Conformity Test Specifications torARINC 653
+Extended Services
+653P4 Avionics Application Software Standard Interface Part4—Subset Services
+653P5 Avionics Application Software Standard Interface Part 5—Core Software Recommended Capabilities
+Note: Within ARINC Standards! their identification islisted initsbasic form. W1,en anARINC Standard ismodified
+byasupplement, thenumeric notation ischanged byadding thesupplement identifier asasufflx, eg.,
+ARINC 758-2. Wbere references aremade toanARINC Standard, only thebasic number isused The
+reader should assume thatthereference includes allrelevant supplements.
+This documonl japublished information asdefined by15CFR Seotion 734.70! theExport Administration Regulations (E~), Aspublicly available technoIogy under 15CFR
+74.3(bX3), jtisnotsubjec* tomcCAR antidoes nothave anECCN. ltmay beesponed wjmool an94!oll Ijcense.
+Copy6ght ARINC lndutI‘y Adpgjte
+P,oiäd.d byINSMa~4 ander Ucen,. wlhARINC t.tanba..D.hI 0~nc. GntH &CoKG0balngeN9968393004. Us.,.NorrrenaIeOa
+Ne‚aprodudinor nawarh,ng permnitt.d *dhojl hceMa horn INS NotIotR...~. 031300020 0157.49 ItT©2019 BY
+SAE INDUSTRY TECI-INOLOGIES CONSORTIA (SAE ITC)
+16701 MELFORD BLVD SUITE 120
+BOWlE, MARYLAND 20715 USA
+ARINC SPECIFICATION 653P1-5
+AVIONICS APPLICATION SOFTWARE STANDARD INTERFACE
+PART 1
+REQUIRED SERVICES
+Publjshecj December 23,2019
+Prepared bytheAirlines Electronic Committee (AEEC)
+Adopted bytheAEEC Executive Committee
+Adoption Date Publication Date
+Specification 653 October4, 1996 January 1,1997
+Supplements tothisARINC Standard
+Specification 653-1 September 16,2003 October 16,2003
+Specification 653P1-2 October4, 2005 March 7,2006
+Specification 653P1-3 October 6,2010 November 15,2010
+Specification 653P1-4 April 29,2015 August 21,2015
+Specification 653P1-5 May 1,2019 December23, 2019
+Asummary ofthechanges introduced byeach supplement isincluded attheendofthisdocument.
+Copy‘i~t,i ARINC Irdu.liy Acliuili.u
+P,o‘.id.d byIHSMalkil und., IIcen,. will.ARINC Llcwl,..=Oi.hI 0.t.nc GmbH CcKGUbwfing.&u9O8393~4. U$.,=Nonn.n,l.b,
+Nornpcodudbnor e.t,.orld,~ p.rrniu.d w4hoA Ocense korn IHS HoilotRnalø, Oa‘3W2010 01:5749 MDTFOREWORD
+SAE ITC,theAEEC, andARINC Standards
+ARINC lndustry Activities, anindustry program ofSAE ITC,organizes aviation industry
+committees andparticipates inrelated industry activities thatbenefit aviation atlarge by
+providing technical leadership andguidance. These activities directly support aviation
+industry goals: promote safety, efflciency, regularity, andcost-effectiveness inaircraft
+operations.
+ARINC Industry Activities organizes andprovides thesecretariat forinternational aviation
+organizations (AEEC, AMC, FSEMC) which coordinate thework ofaviation industry
+technical professionals andleadthedevelopment oftechnical standards forairborne
+electronic equipment, aircraft maintenance equipment andpractices, andflight simulator
+equipment used incommercial, military, andbusiness aviation. TheAEEC, AMC, and
+FSEMC develop consensus-based, voluntary standards thatarepublished bySAE ITC
+andareknown asARINC Standards. TheuseofARINC Standards results insubstantial
+technical andeconomic benefit totheaviation industry.
+There arethree classes ofARINC Standards:
+a)ARINC Characteristics —Define theform, fit,function, andinterfaces ofavionics
+andother airline electronic equipment. ARINC Characteristics indicate to
+prospective manufacturers ofairline electronic equipment theconsidered and
+coordinated opinion oftheairline technical community concerning therequisites of
+newequipment including standardized physical andelectrical characteristics to
+foster interchangeability andcompetition.
+b)ARINC Specifications Areprincipally used todefine either thephysical
+packaging ormounting ofavionics equipment, datacommunication standards, or
+ahigh-Ievel computer language.
+c)ARINC Reports —Provide guidelines orgeneral information found bytheairlines
+tobegood practices, often related toavionics maintenance andsupport.
+Therelease ofanARINC Standard does notobligate anyorganization orSAE ITCto
+purchase equipment sodescribed, nordoes itestablish orindicate recognition orthe
+existence ofanoperational requirement forsuch equipment, nordoes itconstitute
+endorsement ofanymanufacturer‘s product designed orbuilttomeet theARINC
+Standard.
+Inorder tofacilitate thecontinuous product improvement ofthisARINC Standard, two
+items areincluded intheback ofthisvolume:
+AnErrata Report solicits anycorrections toexisting textordiagrams thatmay be
+included inafuture Supplement tothisARINC Standard.
+AnARINC lAProject Initiation/Modification (APIM) form solicits anyproposals for
+theaddition oftechnical material tothisARINC Standard.
+CopflhLARING1ndusI~MUnII~8
+P,&d.d byIHSMMI4I und., Ice,,. e~h~INC tt.nn..‘O~hI D,I.nc. G,r~H 8Co.KGUb.1n9rt19068393004. Uw-Nornwsleh.
+Nor.produ~on 0(r.Iwoi1dn~ pwrnitled ndhou~ Icenne Innen IHS HoiIonRee&L 93fl012020 01.5749 MDT~II •
+—ii -
+..—
+—. .
+• — — —. •—
+1. -•- -
+• ••• — •_ •
+—- -.1. -
+.
+• — 1• •— •
+— • —
+—— • —cl— —
+—— 1 1 —1— •
+—— • 1 •
+• ~1 •
+• — • II~
+—— ••.— — • II~ 1—
+•• -
+—— 1 i•— —• —.. -.
+— • ••— 1— ••
+• - -_•- -
+• — 0 • —
+ei — •_
+~. — • •
+ei — —— — •
+Cl
+~1 _- -
+• —— —
+—• —i •
+ei 1.~
+1• 1 •
+1 — i~i —
+-• -ci—
+~1— i i —•
+• —• —
+— _•— • —• —
+— —l~ i~
+—e — —i — —•
+•ii
+-_.
+— ci— •~ i i —i
+— — —cc.
+ii— i — —
+— i • i•—
+• — . ii—
+CopyrigtIl ARINC Induslq, A~0i~.itin
+Prooid.d tyJHSMartit under liceu.. uuthARtNC Lic.ns.eutiehl Ditence GntH 8CoKGUbe4tnQepV9968393~4 UwNontnt&Je.
+Naeproduclloo ornetacflfr9 pemiitted alMut ‚ans. trat,, IHS NdTorRSSTL 0313w1020 01:5749 I~T—— .
+1 —
+II —•
+1- .
+~•1
+• .
+•.- 0- .1 •
+—1— • • —1
+— —•:. •._ •
+— .._ .
+— —1 • — — —•
+——II—
+• .
+—
+~1~
+—— •
+•1 - — •
+•1-— • —•—— •• —
+—• — — — •_—•• —
+~1~ — — — —— •
+—— 1 — — 1 —— II —
+—— • — — — .—
+- -- ._-.• -
+1• — — — — .— •
+~~1~ ~ 1
+II — — 1~~1~
+• — — 1~~1~
+• — — — •~~1~
+1 — 1 • •~ — 1
+• 1 — 0 1 — 1~ —. 1
+• 0 —1 —l~
+• 0 —1 —l~ 1 — —~1
+• 1~1 _l~ 1 — — •
+• 0 —1 —l~ • —— 0
+— 1
+—_—. — —~0l —
+II—•_ —
+• ---
+—— 1 ——l~ —
+—— 1 ——l~ — 1—
+—— • ——1~ -
+-‘- 1
+• ••
+ei — —_._ —
+—_.— — 1~
+iv
+Copy~hLftRINC IndusbykUuillfl
+P,O,4dId byIHSM1t und., I~o.. wdhARIHC LanswDllhI Deffince GmbH Co.KGUbrn9ngmV9969393~)4. Uu.,NcnTrint½IIl.
+Ner.p.odudbn 0~nlttuod.ro pfliuad Wdftoj( Ocens. fro,n IHS NultutRe..I.. 0Y3G2020 01:57.49 tAGT1
+1
+- Ä
+.-
+— 1
+• 1
+.• .1
+.•
+1 1
+• -- -
+• s•
+1
+•• Ä
+.-• 1• •~
+1 .;
+— ——1~ — ••
+— ——1~ — — .~
+1
+- -
+— —
+~1— • • —1
+~1— • • —1
+—._ 1 1 —1
+—..
+- Ä
+-• Ä• Ä
+• — 0
+• -.-. -
+- • •1~
+1~
+• -•- 1
+•
+-•
+—1— • • —1
+_._ 1 • —
+_._ 1 1 —
+~1
+~0 ~
+1 — : ‘
+v
+Copytiglil ARLNC It~ustty MOvites
+Proviad byIHS 11.901 under Kunz. wdhARINC Lten$19-Oi.N DderaGmbIl 8CoKGUbettitto.a09960393004. Us,,Norm.nsIetI..
+NOmproduclion 0,n.twodt&tg petruitffid wohout licenn. (rom INS NotforRnfl. 03,30,2020 01:57:49 MOT—:•i
+‘:.i 1
+.... —
+‘s•-
+.- .;
+L-
+•~ 1~ 1 II
+1
+1.
+1.
+1•
+• • .
+• • •
+• 1 • —
+--.- 3
+~~1~
+-‚ ~ A• ~
+• -
+• - Ä -
+1 1— ~1 — —
+• •— — —• 1 1— —
+• •— 1~ — —1 1 1—
+—• 1 1— —
+• -~•
+• • —. 1~ ••
+• • — 1~
+3
+• • •
+3
+• - •
+• 1 •
+• 1
+• - •
+• — — —II
+3 • ‘- •
+CopyrighIARINC Ir~usl~ MtviI4n
+P,o.~dd byINS~.UrII und.c II~na wiI~ARING Lkr.wO~N Od.ncs GmbH &CoKGUb,nng&g990aaea®4, Unr.Notrnens~*..
+Nemp.tdudbn ern.Iwodung p.m11.d wiIIiout bc.ng. (mm INS Nol(otRnaI& O3~1GI2O2O 015749 MDlARINC SPECIFICATION 653, PART 1
+TABLE OFCONTENTS
+APPENDIX HARINC 653XML-SCHEMA TYPES 210
+APPENDIX 1ARINC 653XML-SCHEMA TYPE USAGE EXAMPLES 216
+VII
+Cot,ylighI RINCIl~Mfr.il..
+Provid.d by1115Markt, ander liest,., enIhARINC Llcerlsn.Oi.hl Getane. GmbH &Ca.KGUb,n090ft19968393004 Un.n.Harm.nst,ile
+Naeproduclknornetwonitirg p.,millad witheol hiense(rom INS NoltotRand, O3l3~202O 0157:49 MDIARINC SPECIFICATION 653, PART 1—Page 1
+1.0INTRODIJCTTON
+1.0 INTRODUCTION
+1.1 Purpose
+Thisdocument specifies thebasic operating environment forapplication software used within
+Integrated Modular Avionics (IMA) andtraditional ARINC 700-series avionics.
+Theprimary objective ofthisspecification istodefine ageneral-purpose APEX
+(APplication/EXecutive) interface between theOperating System (OIS) ofanavionics computer
+resource andtheapplication software. lncluded within thisspecification aretheinterface requirements
+between theapplication software andthe0/5andthelistofservices which allow theapplication
+software tocontrol thescheduling, communication, andstatus Information ofitsinternal processing
+elements.
+Thisspecification defines thedataexchanged statically (viaconfiguration) ordynamically (via
+services) asweilasthebehavior ofservices provided bythe0/Sandused bytheapplication. ltisnot
+theintent ofthisspecification todictate implementation requirements oneither thehardware or
+software ofthesystem, norisitintended todrive certain system-levei requirements within thesystem
+which follows thisstandard.
+Themajority ofthisdocument describes theruntime environment forembedded avionics software.
+This listofservices identifies theminimum functionality provided totheappIication software andis,
+therefore, theindustry standard Interface. ltisintended forthisinterface tobeasgeneric aspossible,
+since aninterface withtoomuch complexity ortoomany system-specific features isnormally not
+accepted over avariety ofsystems. Thesoftware specifications oftheAPEX interface areHigh-Order
+Language (HOL) independent, allowing systems using different compilers andlanguages tofolIow
+thisinterface.
+Thisdocument isintended tocomplement ARINC Report 651: Design Guidance forIntegrated
+Modular Avionics. ltisexpected thatthisdocument willevolve tocontain additional functionality and
+capability. Supplements tothisdocument willbeprepared asneeded bytheindustry.
+1.2 Scope
+Thisdocument specifies boththeinterface andthebehavior oftheAPIservices. Behavior is
+specified totheextent needed todescribe functionality relevant tointerfacing applications.
+Where necessary, assumptions aremade astothesupport orbehavior provided bytheoperating
+system andhardware. This should notbeconstrued asaspecification fortheO/Sorhardware.
+However, where the0/5orhardware does notcoincide withthestated assumptions, theAPI
+behaviors specified herein may notmatch theactual behavior.
+ARINC 653isintended foruseinapartitioned environment. Inorder toassure ahighdegree of
+portability, aspects ofthepartitioned environment arediscussed andassumed. However, this
+specification does notdefine thecomplete system, hardware, andsoftware requirements for
+partitioning, nordoes itprovide guidance onproper implementation ofpartitioning, andinparticular,
+robust partitioning. ltmust notbeconstrued thatcompliance toARINC 653assures robust
+partitioning.
+1.3 APEX Phases
+(This section removed bySupplement 4.SeeSection 2.3.5.4.)
+Copflhl ~INC Indu,lry MIilItos
+P101id4 byIHSM..toI ‚oder Crense IO4hARINC ltoanoee°DiSN Defence G.ItH &CoKGUbodn9eN9968393004, Unr-Horrne.WtlIe.
+No.‚produdbw. 0,nelwofllng p.nwfl.d w,fl,ooI hc.noe Orom IHS NottorReweI,. 0313012020 0157:49 MDTARINC SPECIFICATION 653, PART 1—Page 2
+1.0INTRODUCTION
+1.4 ARINC Specification 653Basic Philosophy
+ARINC 653Part0,Overview ofARINC 653, Section 1.3describes thebasic philosophies of
+ARINC 653andthedecomposition ofsoftware andhardware thatmay reside within anintegrated
+module.
+1.5 Implementation Guidelines
+ARINC 653Part 0,Qve,view ofARINC 653, Section 1.5provides implementation guidelines for
+ARINC 653.
+1.6 Document Overview
+ARINC 653Part 0,Overview ofARINC 653, Section 1.4provides anoverview ofARINC 653andits
+various parts.
+Thisdocument, ARINC 653Part 1,defines “Required Services.“ Part 1constitutes thebasic
+requirements andguidance foranARINC 653compliant 0/8API. Part 1isorganized intofive
+sections andanumber ofappendices, asfollows:
+Section 1.0lntroduction
+Section 2.0System Overview
+Section 3.0Service Requirements
+Section 4.0Compliance
+Section 5.0XML Configuration
+Appendix AGlossary (See ARINC 653Part0)
+Appendix 8Acronyms (See ARINC 653Part0)
+Appendix C(deleted bySupplement 3)
+Appendix DAda83 andAda95 Language Interface Specification
+Appendix ECLanguage Interface Specification
+Appendix F(deleted bySupplement 1)
+Appendix GGraphical view ofARINC 653XML Schema Types
+Appendix HARINC 653XML Schema Types
+Appendix 1Example XML Schema anditsCorresponding XML Data Instance
+Thelntroduction section describes thepurpose ofthisdocument andprovides anoverview ofthe
+basic philosophy behind thedevelopment oftheAPEX interface.
+TheSystem Overview section defines theassumptions pertinent tothehardware andsoftware
+implementation within thetarget system, while italsoidentifies theassumed requirements specific
+tothe0/Sandapplication software. ltidentifies thebasic concepts oftheexecution environment of
+thesystem, providing anoverall understanding ofthe interactions between theindividual elements
+within thesystem.
+TheService Requirements section identifies those fundamental features which theapplication
+software needs inorder tocontrol theoperation andexecution ofitsprocesses. These
+requirements neither favor oneparticular typeofapplication noradvocate anyspecific designs of
+theapplication software. Thissection alsoidentifies theactual listofservice requests which satisfy
+theindividual requirements. These requests form thebasis ofthisinterface standard.
+TheCompliance section discusses necessary consideration foranO/Sorapplication tobe
+compliant totheAPEX interface.
+Copynohl ARINC PndunnyAchoihe.
+Pro‘wid.d byIHSMonnI und., Iic.o,. wdhARINC LicensaeDi.N DW,nc. GiytH &Co.KGUb.dng.NO*a3S3~4. UnerNo~rnønsI.II,.
+NOMprnduclbn Ofnølwoddng p.trninød wo,ool PC&.Oe Uom IHS N04(0‘RaalL O~I3&2O2O OtS749 MOTARINC SPECIFICATION 653,PART 1—Page 3
+1.0INTRODUCTION
+TheXML Configuration section diseusses theuseofXML fordefining thecontents ofthe
+configuration.
+1.7 Relationship toOther Standards
+ARINC 653Part 0,Overview ofARINC 653, Seetion 1.6describes other standards thatarerelated
+tothedevelopment ofARINC 653.
+1.8 Related Documents
+(The content ofthissection wasmoved toARINC 653Part 0,Overview ofARINC 653, Section 1.6.)
+Copflhl ARIHC Induulry Atbn4Les
+PrG\ndod byPIlSModul und., lan.. wdh RIHC tto,s..‘Oi.hI O&.nc, GmbH &C~KGUb.linØul9968393~d. Uu.,q4orw.nfld..
+Id,‚.p‘odud~n ern.u..n~ng p.mdu.d .dhojl bc.nn.from IHS IdoltorRs.~,. 03d3012020 01:57:49 kOTARING SPECIFICATION 653, PART 1—Page 4
+2.0SYSTEM OVERVIEW
+2.0 SYSTEM OVERVIEW
+2.1 System Architecture
+This Interface specification hasbeen developed forusewithanAvionics Computer Resource
+(ACR). Itsimplementation may belntegrated Modular Avionics (IMA) orfederated avionics within a
+LineReplaceable Unit(LRU). Thesystem architecture supports partitioning inaccordance withthe
+IMAphilosophy.
+ARINC 653Part 0,Ove,view ofARINC 653, Section 1.3describes thebasic philosophies 0fARINC
+653andthedecomposition ofsoftware andhardware thatmayreside within anintegrated module.
+Thefirstlevel decomposition ofanintegrated module consists oftwomajor categories:
+1.Partitioned application software.
+2.Core module.
+Acore module cancontain oneormore processor cores, from oneormore processors and
+allocated resources including memory anddevices. Thecore module architecture hasinfluence
+ontheO/Simplementation, butnotontheAPEX interface used bytheapplication software ofeach
+partition. Application software should beportable between core modules andbetween individual
+processor cores ofacore module without modifying itsinterface withtheOIS.
+COMMENTARY
+Inthecontext ofthisdocument, when there aremultiple processors orprocessor
+cores onacommon hardware element, each setofprocessor cores thathosts a
+single ARINC 653APIexecution context (i.e.,execute asingle module schedule at
+anygiven time) isconsidered toconstitute acore module.
+Toachieve therequired functionality andconform tospecified timing constraints, theconstituent
+processes ofapartition mayoperate concurrently. The0/8provides services tocontrol andsupport
+theoperational environment forallprocesses within apartition. Inparticular, concurrency ofoperation
+isprovided bythepartition-level scheduling model.
+Theunderlying architecture ofapartition issimilar tothatofamultitasking application within a
+general-purpose mainframe computer. Each partition consists ofoneormore concurrently executing
+processes, sharing access toprocessor resources based upon therequirements oftheapplication. All
+processes areuniquely identifiable, having attributes thataffect scheduling, synchronization, and
+overall execution.
+Toensure portability, communication between partitions isindependent ofthelocation ofboththe
+source anddestination partition. Anapplication sending amessage to,orreceiving amessage from,
+another application willnotcontain explicit information regarding thelocation ofitsownhostpartition
+orthatofitscommunications partner(s). TheInformation required toenable amessage tobecorrectly
+routed from source todestination iscontained inconfiguration tables thataredeveloped and
+maintained bythesystem integrator, nottheindividual application developer. TheSystem Integrator
+configures theenvironment toensure thecorrect routing ofmessages between partitions within an
+integrated module andbetween integrated modules. Howthisconfiguration isimplemented is
+outside thescope ofthisstandard.
+2.2 Hardware
+Inorder toisolate multiple partitions inashared resource environment, thehardware should
+provide the0/5withtheability torestrict memory spaces, processing time, andaccess toI/Ofor
+each individual partition.
+Capy,i9hIARINC Indus~yAs0viLies
+Pro‘,d.d byIHSMarlal und.r Ocens. *i(h~INC Lt.nsn.DiøhI De(,nce GmbH &Ca.KGUb.din~em~98O393~4. Uoe,-torn,.nniII..
+Wor.produd~no, nek,wo‘*ing perrniII.d w~hmjI lan.. ‚lOfll IHS HoItorR.o&.. 03G0Q020 0157A9 MDTARINC SPECIFICATION 653,PART 1—Page 5
+2.0SYSTEM OVERV1EW
+Partition timing interrupt generation should bedeterministic. Anyinterrupts required bythe
+hardware should beserviced bytheOIS. Time partitioning should notbedisturbed bytheuseof
+interrupts.
+There areseveral basic assumptions made about theprocessor:
+1.Theprocessor provides sufficient processing capacity tomeet worst-case timing
+requirements.
+2.Theprocessor hasaccess torequired I/Oandmemory resources.
+3.Theprocessor hasaccess totimeresources toimplement thetime services.
+4.Theprocessor provides amechanism totransfer control tothe0/Sifthepartition attempts
+toperform aninvalid operation.
+5.Theprocessor provides atomic operations forimplementing processing control constructs.
+These atomic operations willinduce some jitter ontime slicing. Also, atomic operations are
+expected tohave minimal effect onscheduling.
+2.2.1 Core Modules with Multiple Processor Cores
+Thisstandard includes support fortheARINC 653services tobeutilized with acore module that
+contains asingle ormultiple processor cores. With multiple processor cores, additional scheduling
+paradigms arefeasible onacore module:
+•Multiple processes within apartition scheduled toexecute concurrently ondifferent
+processor cores.
+•Multiple Dartitions scheduled toexecute concurrently ondifferent processor cores.
+Section 4.0provides compliance requirements foranARINC 653compliant 015. Amulticore
+0/5compliant tothisstandard utilizes thecompliance requirements defined inSection 421
+COMMENTARY
+Thisstandard covers software service andconfiguration aspects foranARINC 653
+based system thatincludes acore module withmultiple processor cores.
+Certification considerations, including partitioning associated withcore module
+resources (e.g., shared cache, shared memory controller) shared bymultiple
+processor cores areoutside thescope ofthisstandard.
+Theservices andconfiguration aspects associated withmultiple processor cores are
+also intended tobesource code compatible withapplications developed forsingle
+core processors. ltisintended thatanapplication developed originally forasingle
+core processor willnotrequire source code modification when utilized inapartition
+allocated asingle processor core. Acore module with multiple processor cores
+mayutilize different ARINC 653related type andconstant definitions (ie
+recompilation should beassumed asbeing required)
+2.3 System Functionality
+Thissection describes thefunctionality tobeprovided bytheO/Sanditsinterface withthe
+application software.
+Atthecoremodule level, theOISmanages partitions (partition management) andtheir interpartition
+communication, thelauer being conducted either within oracross integrated module boundaries. At
+thepartition level, the0/Smanages processes within apartition (process management) and
+communication between theconstituent processes (intrapartition communication). TheO/Smay
+therefore beregarded asmulti-level according toitsscope ofoperation. OISfacilities (e.g.,
+CopyngM ~IHG IrdusIry M5.~4,s
+Pro.id.d byIHSMa,tit und.r ho.n.. ‚(h~IHC Lten...‘aoN D.(.r,c. GmbH Ca-KGUbtdingin~o68303~4. UwmNo,m.r.bN.
+Nompmdodbn or oo.1,1rg p.nI(.d w(Ihoul Ic.,,. (rom IHS Nollor Rn.I.. 03130(2020 01;S7:40 bOTARINC SPECIFICATION 653,PART 1—Page 6
+2.0SYSTEM OVERVIEW
+scheduling, message handling) areprovided ateach level, butdiffer infunction andcontent
+according totheir scope ofoperation. Definition ofthese facilities therefore distinguishes between
+thelevel atwhich theyoperate.
+Atanytime instance, theintegrated module isininitialization, operational, oridlestate. 0npower
+up,theintegrated module begins execution intheinitialization state. Onsuccessful completion of
+initialization, theintegrated module enters theoperational state. During operational state, theO/S
+manages thepartitions, processes, andcommunications. Theintegrated module continues inthe
+operational state untilpower isremoved, orthemodule health monitoring function commands the
+integrated module toreinitialize ortoenter idlestate.
+COMMENTARY
+The0/8implementer mayfurther renne integrated module states insupport of
+implementing module health monitoring (see Section 2.4).
+2.3.1 Partition Management
+Central totheARINC 653philosophy istheconcept ofpartitioning, whereby theapplications
+resident inanintegrated module arepartitioned withrespect tospace (memory partitioning) and
+time (temporal partitioning). Apartition istherefore aprogram unitoftheapplication designed to
+satisfy these partitioning constraints.
+The0/8supports robust partitioning. Arobustly partitioned system allows partitions withdifferent
+criticality levels toexecute inthesame integrated module, without affecting oneanother spatially or
+temporally inunexpected ways.
+Theportion ofthe0/Sthatoperates atthecore module level isresponsible forenforcing
+partitioning andmanaging theindividual partitions within theintegrated module. This portion ofthe
+0/Sshould beisolated andprotected against failures ofanysoftware (e.g., application, 0/8,
+language support libraries, etc.) executing inthecontext ofapartition.
+Partitions arescheduled onafixed, cyclic basis. Toassist thiscyclic activation, the0/8maintains a
+module schedule offlxed duration (iemajor time frame), which isperiodically repeated
+throughout theintegrated module‘s runtime operation. Partitions areactivated bybeing assigned to
+oneormore partition timewindows within themodule schedule. Bach partition timewindow is
+defined byitsoffset from thestartofthemodule schedule andexpected duration. This provides a
+deterministic scheduling methodology whereby thepartitions arefurnished with apredetermined
+amount oftime toaccess processor resources.
+Within apartition timewindow, thepartition‘s processes aremanaged asdescribed in
+Section 2.3.2.3.
+COMMENTARY
+Temporal partitioning isinfluenced bythe0/8overhead. Inter-module
+communications acknowledgements andtime-outs mayinterrupt onepartition even
+though theevents relate toadifferent partition. Asaresult, thetimeduration
+allocated forusebyanapplication may beimpacted.
+Each partition haspredetermined areas ofmemory allocated toit.These unique memory areas are
+identifled based upon therequirements oftheindividual partitions andvary insizeandaccess
+rights.
+Cowioht ARINC tndusIiy Achotit,,
+P,o,d.d byINSM.,loi und., Iran,. wdh RINC Lt.OnaSfli,9d DM,r,c. GmbH &Co.KGUbmir~.,v95ta393~4 U.wNorm.mI,II•.
+Norepood‘jdknor n.lwoIlnin9 p&rMI.d nndlhojl mono horn IHS NottorR,n,I.. 03130t2020 01,57:49 MDIARING SPECIFICATION 653, PART 1—Page 7
+2.0SYSTEM OVERVIEW
+Configuration ofallpartitions throughout thewhole system isexpected tobeunder thecontrol of
+thesystem integrator andmaintained withconfiguration tables. Theconfiguration table forthe
+module schedule defines themajor timeframe anddescribes theorder ofactivation ofthepartition
+timewindows within thatmajor timeframe.
+Partition management services areavailable totheapplication software forsetting apartition‘s
+operating mode andtoobtain apartition‘s status.
+2.3.1.1 Partition Attribute Definition
+Inorder forpartitions tobesupported byacore module, asetofunique attributes willbedefined for
+each partition. These attributes enable theOIStocontrol andmaintain each partition‘s operation.
+Partition attributes areasfollows:
+FIXED ATTRIBUTES (defined inconfiguration tables using theARINC 653XML schema defined
+inAppendix G):
+1.Identifier —defines anumerical identity forthepartition. ltisuniquely defined atleast ona
+core module basis. ltmaybeused bytheOIStofacilitate partition activation, message
+routing, anddebug support. ltmayalso beused bytheapplication, forexample, asaneId
+within amaintenance message.
+2.Name —defines astring identity forthepartition. ltisuniquely defined atleast onacore
+module basis.
+3.Memorv Repuirements —defines thequantity ofmemory available tothepartition, with
+appropriate code/data segregation. Thememory requirements may include separate
+specification oftheprocess stack sizes. ltis0/5implementation dependent whether
+definitions ofprocess stack sizes arerequired asseparate memory requirements orare
+included inadata memory allocation.
+4.Partition Period —defines therequired time interval atwhich thepartition must beactivated
+inorder tosatisfy itsoperational requirements.
+COMMENTARY
+Typically, thepartition period isthegreatest common factor oftheprocess periods
+within apartition. Iftheprocess periods areharmonic, then thisistheperiod ofthe
+process inapartition thathastheshortest period. Ifthere arenoperiodic processes
+inapartition, then theperiod isbased ontheminimum execution frequency required
+byanapplication tosatisfy itsperformance requirements. Thepartition period is
+used asaninput indetermining ofisets anddurations ofpartition timewindows.
+5.Partition Duration —theamount ofexecution timerequired bythepartition within one
+partition period.
+COMMENTARY
+This isused asaninput indetermining offsets anddurations ofpartition time
+windows.
+6.InterDartition Communication Repuirements (Ports) —denote those partitions and/or devices
+withwhich thepartition communicates.
+7.Partition Health Monitor Table —denotes Health Monitor (HM) actions tobeperformed on
+detection offailures assigned tothepartition.
+Copyr*IRINC Irdu.L~Ac~vilas
+Provld.d byIHSMSrh~ u,dr lan,. w4hAR1NC L~.nsn.Di.N Odfcs GmbH &CoKGUb.d‘ng.a‘9968393~4. Usm.Hormnbfl,.
+Nomprodiidknor ‚.tno,tIng p.r,rdll.d w~houl hc.,,. ton,IHS HOItotROOIL 03~3OQO2O 015749 MOTARINC SPECIFICATION 653, PART 1—Page 8
+2.0SYSTEM OVERVIEW
+FIXED ATTRIBUTES (notincluded intheARINC 653XML schema)
+1.Number 01Associated Processor Core s —defines thenumber oflogical processor
+cores fixed atconfiguration time associated with thepartition thatcanbeused to
+schedule processes. Anapplication anuseservices during thepartition initialization
+phase toobtain thenumber oflogical processor cores available tothepartition forrunning
+processes. Theassociated logical processor cores areavailable tothepartition or
+process scheduling fortheduration 01each ofthepartition time windows An
+application schedules processes torunonaspecific logical processor core byinitializing the
+process tohave anaffinity tothislogical processor core.
+COMMENTARY
+Asingle logical processor core canbeassigned forapartition (iemono core
+partition), even when thecore module supports theassignment ofmultiple logical
+processor cores.
+2.Entrv Point (i.e., partition initialization) —denotes partition start/restart address.
+3.System Partition —denotes thepartition isasystem partition (i.e., isnotrestricted tousing
+ARINC 653services tointeract withthe0/5).
+VARIABLE ATTRIBUTES (defined andcontrolled during runtime):
+1.Lock Level —denotes thecurrent locklevel oftheprocess within thepartition thathas
+preemption locked (see Section 2.3.2.6).
+2.ODerating Mode —denotes thepartition‘s execution state (see Section 2.3.1.4).
+3.Start Condition —denotes thecondition under which thepartition started.
+2.3.1.2 Partition Control
+The0/5starts theapplication partitions when the0/5enters operational state. When the015
+starts anapplication partition after acore module power upthepartition starts inthe
+COLD START mode Theresources used byeach partition (channels, processes, queues,
+semaphores, events, etc.) arespecified atsystem build time. Thecorresponding objects (i.e., data
+structures) arecreated during thepartition‘s initialization phase, andthen thepartition enters
+NORMAL mode. Theapplication isresponsible forinvoking theappropriate APEX calls totransition
+thepartition from oneoperational mode toanother. Theoperational mode ofonepartition is
+independent oftheoperational mode ofother partitions. Thus, some partitions may beinthe
+COLD_START mode while other partitions areintheNORMAL orWARM_START mode. TheHM
+function canrestart, orSettoIDLE mode, asingle partition, multiple partitions, ortheentire
+integrated module inresponse toafault.
+2.3.1.3 Partition Scheduling
+Scheduling ofpartitions isstrictly deterministic overtime. Based upon theconfiguration ofpartitions
+within anintegrated module, overall resource requirements/availability, andspecific partition
+requirements, atime-based activation Module Schedule isgenerated thatidentifies thepartition
+timewindows allocated totheindividual partitions. TheModule Schedule isenforced during the
+operational state oftheintegrated module Each partition isscheduled according toits
+respective Partition Time Windows (i.e., itspartition schedule).
+APartition Time Window ianuninterrupted interval ofexecution time provided toa
+partition within apartition shedule thatisdefined by
+aTime Window Duration Thequantity ofexecution Urne inthePartition Time Window
+C0PflhLARINC Inu,IrjAclMfls
+Ptov~ed byIHSMarnit ander ~cer,se wdhA~INC LiceroneaDieN DeO.rce GmbH &Ca.KGUbe,Iing.&99683e3~4. Un,—NonnensIe#e.
+Nareprodu~on ern.twn,blng perTtolled wahmit urans. fron, IHS NottorPanel.. 93(3012020 0157:49 MDlARINC SPECIFICATION 653,PART 1—Page 9
+2.0SYSTEM OVERVIEW
+bTime Window Qifset —Time between thestart oftheModule Schedule andthe
+activation ofthepartition time window
+cPeriodic Processing Start —Anindication thatperiodic processes canbereleased at
+anoffset defined from thebeginning ofthepartition time window (see
+Section 2.323)
+Anexample partition schedule forasingle partition isshown inFigure 2.3.1.3-1. Inthis
+illustration thepartition‘s period isonehalfofthemajor frame time (e.g., ifthemajor frame
+was100milliseconds thepartition speriod would be50milliseconds). Periodic processes
+associated withthispartition would bescheduled tobereleased atanoffset defined from
+thebeginning ofeither TW orTWbutnotatanoffset defined from thebeginning ofeither
+TWorTW
+Partition Period
+DUratiOn Tw,~ Duration T~ DixaIIon TW, Duralion 7W.
+~
+1W2 •~TW3•. TW~
+O1betTW,~ 1
+OffsetTW, j
+OflsetTW, .~
+Module Schedule Duration (Major Time Frame)
+Timo ~
+1W —ParUtion Time Window
+—Periodic Processing Start istrue
+Figure 2313-1 Example Partition Schedule
+TheModule Schedule isfixed fortheparticular configuration ofpartitions within anintegrated
+module. TheModule Schedule andPartition Time Window characteristics are:
+1From theapplication developer perspective, thescheduling unitisapartition.
+2Thepartition attributes ofPartition Period Partition Duration, andNumber of
+Associated Processor Cores aresatisfied bytheModule Schedule.
+3Thetime alb ated toapartition isfixed fortheModule Schedule (i.e., partitions have
+nopriority)
+4Time allocated toapartition isdivided intooneormore Partition Time Windows
+within apartition speriod
+5Thesum ofthePartition Time Window durations during aPartition Period areequal to
+(oraregreater than) thePartition Duration
+6FortheModule Schedule, apartition iasigned aNumber ofAssociated Processor
+Cores
+7Apartition executes only during thePartition Time Windows itisallocated andonly
+onthepro eorcores tiasigned
+Copyr~hI ARING ndusi~At1ivii~u
+P,o‘ld.d byIHSMartil und., icunse W4hARINC lJc.n,..-O*hI D.l.nc. GmbH &Co.KG Jt.dIngmVS068SO3004. Usw-Nnnninsue9L
+Nomp.ududbn orn.lwofl‘n9 p.rmdI.d wIIhcui Sven,. Innen IHS HoiIonR.un., 0313012020 015749 MOlARING SPEC1FICATION 653,PART 1—Page 10
+2.0SYSTEM OVERVIEW
+COMMENTARY
+Acore module may support more processor cores than themaximum number
+required tosupport apartition. OnIy theNumber ofAssociated Processor
+Cores isavailable toapartition during thepartition stime windows The
+supported number ofprocessor cores bounds themaximum Number of
+Associated Processor Cores available toanypartition. Toincrease portability
+some partitions may bedesigned toaccommodate avariable number of
+processor core configurations (e.g four core, twocore single core)
+COMMENTARY
+There arescenarios where oneormore partitions are heduled inaspecific
+sequence and/or with arelative time offset Thsyst mintegrator canusetime
+window offsets tosequence partition execution inaspecific order
+8Atthebeginning ofthepartition‘s next Partition Time Window partition execution
+resumes
+COMMENTARY
+Exactly what isexecuted when thepartition resumes depends onthe
+partition soperating mode (see Section 2.3.1.4). InNORMAL mode execution
+isinfluenced bychanges thatmay have occurred totheprocess states (see
+Section 23.2.2.11) andtheir associated priorities while thepartition was
+suspended
+9Processes within apartition areexecuted inapriority-preemptive schedule with
+consideration forcore affinity (see Section 2.3.2.3 fordetail
+10During each Partition Time Window, thepartition isprovided exclusive access tothe
+Associated Processor Cores allocated tothepartition
+11.During each Partition Time Window, thepartition isprovided access toresources
+allocated tothepartition (eg.,memory) inawaythatmeets Robust Partitioning
+requirements torthesystem (See definition ofRobu tPartitioning inPart 0)
+12AttheendofaPartition Time Window partition xecution issuspended
+13Each partition hasatleast onePartition Time Window identified asaPeriodic
+Processing Start release point (se Setion 33foruse)
+14Partitions donotcontrol theallocation ofresources Theplatform hardware andcore
+software exclusively control theallocation oftheresources tothepartition based on
+onfiguration
+2.3.1.4 Partition Operating Modes
+Thecurrent execution state ofthepartition (idle, coldstart, warm start, ornormal) represents the
+partition‘s operating mode. TheSET_PARTITION_MODE service allows theapplication associated
+with apartition torequest achange toitsoperating mode. TheHealth Monitor, through thehealth
+monitoring configuration tables, canalsorequest changes toeach partition‘s operating mode. The
+current operating mode ofthepartition canbedetermined byusing theGET_PARTITION_STATUS
+service.
+Partition operating modes andtheir state transitions areshown inFigure 2.3.1.4.
+Copyrgh( ARIHC IndusI~ AcIi4Oeo
+Pro.ld.d byPHSMa.*iL u.det ~c.ro. r~th RINC Ltnse.OieN D.i.nc, GmbH &Co.KGUbwbngwflS6S3GSOO4. Use,°Nonrom.ld..
+Nor.producbon orn&modcW.g p.rflN.d m~thojI Iaom. rom INS NolIrrR.sfl. O3~3Od2O2O 015749 MOTARING SPECIFICATION 653, PART 1—Page 11
+These modes aredescribed inSection 2.3.1.4.1, andtheillustrated transitions aredescribed in
+Section 2.3.1.4.2. Process scheduling varies between themodes. Every partition isallocated a
+main process (notanARINC 653process created bytheapplication) thatisutilized during
+GOLD_START andWARM_START. Themain process (assigned theMAIN PROCESS IDby
+the0/5asitsprocess identifier) isthedefault process oftheapplication andistheonlyprocess
+eligible forscheduling during theCOLD_START andWARM_START partition operating modes.
+2.3.1.4.1 Partition Operating Modes Description
+IDLE: Inthismode, thepartition isnoteligible forapplication execution. The
+partition timewindows allocated tothepartition arepreserved.
+Inthismode, thepartition‘s initialization phase iscomplete andthe
+partition‘s process scheduler isactive. Except when theprocess-level
+error handler isrunning, allprocesses thathave been created and
+those thatareintheready state areeligible torun.When theprocess
+level error handler isrunning, aservice thatmay beinvoked during
+initialization controls whether eligible processes continue torunon
+other processor cores orthey areprevented from making progress
+(i.e., pause). When apartition isallocated only asingle processor
+core, bothofthese behaviors areequivalent (i.e., does nothave tobe
+configured).
+COLD_START: Inthismode, thepartition‘s initialization phase isinprogress.
+Preemption islocked withLOCK_LEVEL> 0(main process implicitly
+haspreemption locked andimplicitly owns thepreemption lockmutex)2.0SYSTEM OVERVIEW
+la
+3aib
+3b
+Figure 2.3.1.4 Partition Operating Modes andTransitions
+NORMAL:
+Copydght ARLNC ndustty Act.vitt
+Pro‘gtd.d byHSM.,ldI ijodat ocen,. wdh ARPNC
+Womptodudion Otr.Iwot1Ot~g p.nntIlid wohott Ic.,t. metIHSLIc.no..0,.hI O.to,c. GotH &Co.KGUberIngetitnoGSSS300d. U,ot~Nonn.MI.I9.
+NottotRnM.. 031350020 01.57.49 MDlARING SPECIFICATION 653. PART 1—Page 12
+2.0SYSTEM OVERVIEW
+andtheassociated application isexecuting itsrespective initialization
+code.
+WARM_START: Inthismode, thepartition‘s initialization phase isinprogress.
+Preemption islocked withLOCK_LEVEL> 0(main process implicitly
+haspreemption locked andimplicitly owns thepreemption lockmutex)
+andtheassociated application isexecuting itsrespective initialization
+code. This mode issimilar totheCOLD_START, buttheinitial
+environment (thehardware context inwhich thepartition starts) may
+bedifferent (e.g., noneed forcopying code from NonVolatile Memory
+toRAM).
+2.3.1.4.1.1 GOLD_START andWARM_START Considerations
+COLD_START andWARM_START modes correspond totheinitialization phase ofthe partition.
+Thedifferences between COLD_START andWARM_START depend mainly onhardware
+capabilities andsystem specifications. Forexample, apower interrupt does notimply tostart
+automatically intheCOLD_START mode because thecontent ofthememory canbesaved during
+apower interrupt. TheWARM_START andCOLD_START status may beused inthatcase to
+inform thepartition thatdata values have been kept, andthey may bereused when power recovers.
+Thesystem integrator must inform theapplication developer theinitial context differences between
+these twomodes.
+COMMENTARY
+Themain process istheonlyprocess thatruns inCOLD_START/WARM_START
+mode. This isthedefault process oftheapplication. Allother processes within the
+partition need tobecreated bythemain process inorder todeclare their existence
+totheO/S. Once created, aprocess must bestarted inorder forittobeexecuted.
+Anyprocess started during partition initialization (i.e., tocause automatic execution
+following partition initialization) willnotexecute untilthepartition enters
+NORMAL_MODE (bycalling theSET_PARTITION_MODE service). Theprocess
+used during partition initialization willnotcontinue torunafter theoperating mode
+transitions toNORMAL.
+2.3.1.4.2 Partition Modes andTransitions
+This section describes ARINC 653partition modes andthecharacteristics expected when
+transitioning from onemode toanother.
+When apartition isassigned multiple processor cores, thetransition toadifferent mode applles to
+allassigned processor cores.
+2.3.1.4.2.1 GOLD_START andWARM_START Mode Transition
+Various events maycause atransition totheCOLD_START orWARM_START modes: power
+interrupt, hardware reset, Health Monitoring action, ortheSET_PARTITION MODE service.
+ForEntry Point management, theO/Swilllaunch thepartition ataunique entry point (thesame
+Entry Point forCOLD_START andWARM_START).
+Copy‘lghI ARINC Irduslry Acinsils.
+Provided byIHSMa,lsis under las,. sosARINC LtsnSSø~Di.N Delente GmbH &Co.KGUb511in50505958393004. OwNormsoslsftn,
+NOrspr~uclbii orneIwofling permlIlnd wdhoul lass. rom IHS NoltorRenate. O3I~0‘2O2O 01;S7;49 MOTARING SPECIFICATION 653, PART 1—Page 13
+2.0SYSTEM OVERVIEW
+COMMENTARY
+Forsome languages (Ada, C),anapplication‘s entry point isdefined bythe
+language‘s standard.
+2.3.1.4.2.2 Transition Mode Description
+(la) COLD_START ->COLD_START
+(ib) WARM_START ->WARM_START
+When thepartition iscurrently initializing andacondition occurs where thepartition is
+required torestart using thesame mode thepartition previously started with.
+Theparameter START_CONDITION returned bytheGET_PARTITION_STATUS
+service provides anapplication thecause ofentering theCOLD_START or
+WARM_START mode. Thisparameter allows theapplication associated witha
+partition tomanage itsownprocessing environment oninitialization error, depending
+onitsownstartcontext (e.g., createldoes notcreate aparticular process orport). lt
+canusethisinformation toprevent continuously restart ofapartition dueto
+persistent errors.
+(2) WARM_START ->COLD_START
+When thepartition iscurrently initializing andacondition occurs where thepartition is
+required torestart using adifferent mode than thepartition previously started with.
+Theinitial context ofaWARM_START isconsidered tobemore complete than an
+initial context ofaCOLD_START, soitisnotpossible togofrom COLD_START to
+WARM_START directly orindirectly viaatransition through theidlestate. Ifthe
+partition isintheCOLD_START mode andthedefined HMrecovery action is
+WARM_START, then aCOLD_START isperformed.
+(3a) COLD_START ->IDLE
+(3b) WARM_START ->IDLE
+(3c) NORMAL-> IDLE
+When thepartition calls theSET_PARTITION_MODE service withtheoperating mode set
+toIDLE, orwhen theHealth Monitor makes therecovery action (i.e.,according tothe
+partition‘s health monitor table) toshutdown thepartition.
+(4a) COLD_START ->NORMAL
+(4b) WARM_START ->NORMAL
+When thepartition hascompleted itsinitialization andcalls theSET_PARTITION_MODE
+service withtheoperating mode settoNORMAL. Normal mode process scheduling (see
+Section 2.3.2.3) begins. When apartition hasbeen allocated multiple processor cores,
+process scheduling willbegin forallprocessor cores allocated tothepartition.
+CapytightARINC tndustpyAclMt9i
+Pro,id.d byIHSM.,1dI undr tc.ns. *4hARINC lkn..C.hI Detsoc. GmbH &CoKGUb.dingeiV9068303~4. UwNonr.00bN..
+Na‚.prcdodcnor .twa,*i,g p,malsd *dr‘o.t hairom tomINS NottorR...I.. 03)30,2020 01:57:49 MDTARING SPECIFICATION 653,PART 1—Page 14
+2.0SYSTEM OVERVIEW
+COMMENTARY
+When apartition hasbeen allocated multiple processor cores, some process
+scheduling skew mayoccur between thecores.
+(5a) NORMAL ->COLD_START
+(Sb) NORMAL-> WARM_START
+Thepartition isinthenormal mode andrestart isrequested. Normal mode process
+scheduling (see Section 2.3.2.3) isdiscontinued. When apartition hasbeen allocated
+multiple processor cores, process scheduling onalloftheallocated processor cores willbe
+impacted bytherequest torestart thepartition.
+(6a) IDLE ->COLD_START
+(6b) IDLE ->WARM_START
+These transitions arenotshown inFigure 2.3 14Theonlymechanism available to
+transition from theIDLE mode isanaction external tothepartition, such aspower interrupt,
+core module reset, orapplication reset, fanexternal means exists (ieimplementation
+dependent). TheIDLE toWARM_START transition should beprohibited when IDLE mode
+isentered from COLD_START.
+2.3.2 Process Management
+Within theARINC 653concept, apartition comprises oneormore processes thatcombine
+dynamically toprovide thefunctions associated withthatpartition. According tothecharacteristics
+associated withthepartition, theconstituent processes mayoperate concurrently inorder to
+achieve theirfunctional andreal-time requirements. Multiple processes aretherefore supported
+within thepartition. Processes within apartition share thesame address space.
+Anapplication requires certain scheduling capabilities from theoperating system inorder to
+accurately control theexecution ofitsprocesses inamanner thatsatisfies therequirements ofthe
+application. Processes may bedesigned forperiodic (scheduled tobereleased intotheready
+state ataperiodic rate) oraperiodic (thestarting stopping blocking andrelease ofa
+process isentirety under application control) execution, theoccurrence ofafaultmayrequire
+processes tobereinitialized orterminated, andamethod toprevent arunning process from being
+preempted isrequired inorder tosafely access resources thatdemand mutually-exclusive access.
+Anaffinity torunonaspecific processor core may bespecified foreach process.
+Aprocess isaprogramming unitcontained within apartition which executes concurrently withother
+processes ofthesame partition. ltcomprises theexecutable program, data andstack areas,
+program counter, stack pointer, andother attributes such aspriority anddeadline. Forreferences
+within thisspecification, theterm “process“ willbeused inplace of“task“ toavoid confusion withthe
+Adataskconstruct.
+Access toprocess management functions isviatheutilization ofAPEX services. Thesetof
+services called intheapplication software should beconsistent withthepartition scriticality level.
+Partition code executes inusermode only(i.e., noprivileged instructions areallowed).
+Thepartition should beresponsible forthebehavior ofitsdefined processes. Theprocesses arenot
+directly visible outside ofthe partition.
+Co~yn9ht M~INC nduwy MhnIIi.s
+Prndded byIHSMau und., kens. wdh*RIHC Lk.n,..,Oi.hI D,t.nc. GntH &CO.KGUt,‘Ing.m9968393004, U,.,.Nomi&nwub
+Nor.pmduc~u orn,t.n,ing p.rmiu.d ‚.i(houI kc.n.. from INS Nol(OR.,ab. 03i3012020 OI:SltdO MDTARING SPECIFICATION 553, PART 1—Page 15
+2.0SYSTEM OVERVIEW
+2.3.2.1 Process Attribute Definition
+Inorder forprocesses toexecute, asetofunique attributes needs tobedefined foreach process.
+These attributes differentiate between theunique characteristics ofeach process asweilasdefine
+resource allocation requirements.
+Adescription oftheprocess attributes isgiven below. Fixed attributes arestaticaily defined and
+cannot bechanged once thepartition hasbeen initialized. Variable attributes aredefined withinitial
+values, butcanbechanged through theuseofservice requests once thepartition transitions tothe
+NORMAL partition operating mode.
+FIXED ATTRIBUTES (notincluded intheARINC 653XML schema):
+1.Name —Defines avalue unique toeach process inthepartition.
+2.Entrv Point —Denotes thestarting address ofaprocess.
+3.Stack Size —Identifies theoverall sizefortherun-time stack ofaprocess. Each process is
+aliocated aunique stack. Each process‘s stack may beconfigured tobeidentical ordifferent
+insize.
+4.Base Prioritv —Denotes thepriority ofaprocess defined when theprocess wasstarted.
+5.Period —Identifies theperiod ofactivation foraperiodic process. Adistinct andunique value
+isused todesignate aprocess asaperiodic.
+6.Time CaDacitv —Defines theelapsed timewithin which aprocess should complete its
+execution.
+7.Deadline —Specifies thetypeofdeadline relating toaprocess andmay be“hard“ or“soft.“
+When aprocess failstomeet itsdeadline, theOISdoes notreact differently between “hard“
+and“soff“ deadlines. The0/5willtaketheaction defined fordeadline missed defined inthe
+HMtabies. Ifaprocess level error handler isdefined, theprocess level error handler can
+utilize theGET_PROCESS_STATUS service toobtain thedeadline type andtake
+application-specific actions based on“hard“ versus “soff“ deadlines.
+VARIABLE ATTRIBUTES:
+1.Current Prioritv —Defines thepriority withwhich aprocess mayaccess andreceive
+resources. ltissettobase priority atprocess creation andcanbechanged dynamically after
+process creation.
+2.Deadline Time —Defines theabsolute system timewhen aprocess willexceed itsdeadline.
+Thedeadline time isevaluated bytheoperating system todetermine whether aprocess is
+satisfactorily completing itsprocessing within theallotted time. When aprocess isdormant
+(i.e., stopped), thedeadline time returned byGET_PROCESS_STATUS isundefined.
+3.Process State —Identifies thecurrent scheduling state ofaprocess. Thestate ofaprocess
+could bedormant, ready, running, faulted, orwaiting.
+4.Processor Core Affinitv —Identifies thelogical processor coreatfinity oftheprocess. The
+assignment ofaprocess tohave anaffinity foraspecific logical processor core isused
+during process scheduling torestrict theprocess tobeing eligible forscheduling onlyonthe
+assigned logical processor core. Ifnoaffinity isassigned during initialization, theprocess
+willhave thedefault processor coreaffinity (forARINC 653Part 1,logical processor core
+#O)ofthepartition.
+Once theprocess attribute information isdefined foreach process within thepartition, amethod is
+required toprovide thisinformation tothe0/5. Normally, thelinker provides acertain amount of
+attribute information (i.e.,entry point, stack size, etc.) pertinent tothemain (orinitial) process ofthe
+system. Some Imkers alsoallow forthecreation ofuser-defined data and/or code segments during
+thelinkprocedure.
+CopflhI franc Indoolry flb~,
+pro‘.ldød byIHSMmM uM« o~n,. u~roARINC LknnuoieN Dd.nc. GmbH CcKGUbedin~.a~966393OO4. U,.,flonri.rot.b.
+Ne‚.p,odudbn or‚.tuudürm pwr,1,.d miIMuI ~csns (rom HS Nul(ciBnd.. O3.‘3O.‘2020 0t51.49 MDlARINC SPECIFICATION 653, PART 1—Page 16
+2.0SYSTEM OVERVIEW
+2.3.2.1.1 Process CoreAffinity
+When multiple processor cores areassigned toapartition, anapplication mayrequire control over
+which processor core each process runs on.Anapplication exercises thiscontrol byassigning a
+processor core affinity toeach process. Aprocess canonlybeassigned acore affinity foroneof
+theprocessor cores assigned tothepartition towhich theprocess belongs.
+Ifaprocess‘s core afflnity isnotexplicitly Setduring initialization, theprocess‘s core affinity willbe
+assigned using thedefault processor core afflnity. Thesame default isused during theinitialization
+phase astheprocessor core used toexecute themain process.
+2.3.2.2 Process Control
+Thesystem resources available tomanage theprocesses ofapartition arestatically defined at
+build time andSystem initialization.
+Processes arecreated (eg., resources areallocated) andinitialized during partition initialization.
+This implies thatalltheprocesses ofapartition bedeflned insuch awaythatthenecessary
+resource utilization foreach process canbedetermined atsystem build time. Each process is
+created onlyonce during partition initialization (i.e., onpartition restart, theprocesses willbe
+recreated).
+Process scheduling (seeSection 2.3.2.3) starts when apartition transitions toNORMAL mode.
+COMM ENTARY
+When apartition isassigned multiple processor cores andtwoormore waiting
+processes have been assigned anaffinity fordifferent processor cores, the
+processes start running ontheprocessor cores inanimplementation dependent
+sequence.
+Anapplication should beabletorestart (i.e., reinitialize) anyofitsprocesses atanytime andshould
+also beabletoprevent aprocess from becoming eligible toreceive processor resources. Certain
+fault andfailure conditions maynecessitate apartition torestart orterminate anyofitsprocesses.
+These conditions mayarise duetoeither hardware orsoftware faults, orasaresult ofadistinct
+operational phase oftheapplication.
+Each process hasapriority level, anditsbehavior may besynchronous (periodic) orasynchronous
+(aperiodic). Both types ofprocesses canco-exist inthesame partition. Arunning process could be
+preempted atanytime byaready process withahigher current priority. When apartition is
+assigned asingle processor core (e.g., single core processor), theprocess intheready state with
+thehighest (most positive) current priority isselected overother ready processes forexecution
+when thepartition isactive. When apartition isassigned multiple logica processor cores, asetof
+processes intheready state may beselected based oncurrent priority andcoreafflnity torun
+concurrently ontheassigned logical processor cores.
+COMMENTARY
+Applications designed toexecute onasingle core should notbeconfigured to
+execute onmultiple cores without consideration forimpacts ofconcurrent process
+execution. When multiple processor cores areassigned toapartition containing an
+application thatpreviously executed onasingle core, processes thatpreviously
+executed sequentially maynowexecute inparallel. Anapplication thatdidnotutilize
+ARINC 653services tohandle critical sections mayhave multiple processes
+Capyrighl ARINC Pr‘duMiy AcOviIis
+Provded byIHSMa4,4 undør liCin,. .49ARINC Lteflsee=Oi.N O.0,nce OntH &CoKGUb.zfin9.iv9S98393~4. Us.r.NOnn.nfllh.
+NoreoroducIjon 0,‚r.t.ondng p.,rnilled udhojI Ocens. Irom INS Nolfor Ru.fl. 03fl012020 0157.49 Og,TARINC SPECIFICATION 653,PART 1—Page 17
+2.0SYSTEM OVERVIEW
+concurrently accessing thesame data. Such erroneous applications mey need tobe
+updated (e.g., toaddaccess controls over data structures used bymultiple
+processes) tooperate correctly when multiple processor cores areassigned toa
+partition.
+TheLOCK_PREEMPTION andLJNLOCK_PREEMPTION services areincluded intheAPEX
+specification toprovide ameans tocontrol process preemption (mutex services areanother means,
+seeSection 2.3.6.2.3). Preemptibility control allows arunning process tobeguaranteed toexecute
+without preemption byother processes within thepartition. lfaprocess thatlocked preemption is
+interrupted bytheendofapartition timewindow, itisguaranteed tostillhave preemption locked
+when thepartition isresumed.
+AnO/Smeyormeynotsupport static ordynamic ereation forprocesses oranyother
+communication mechanisms. Thisshould betransparent totheapplication software.
+Themechanisms used bytheprocesses, forinter-process communication andsynchronization, are
+created during theinitialization phase, andarenotdestroyed.
+Tobecome eligible forrunning, aprocess notonlyneeds tobecreated, butalsoneeds tobe
+started. Atleast oneprocess inthepartition isstarted shortly after creation. Running processes can
+start others, stopthemselves orothers, andrestart asrequired bytheapplication; thisisgoverned
+bytheprocess state transition model within the0/S. Processes arenever destroyed (i.e.,the
+memory areas assigned totheprocess arenotde-allocated).
+2.3.2.2.1 Process State Transitions
+The0/8views theexecution ofaprocess intheform ofaprogression through asuccession of
+stetes. Translation between these stetes isaccording toadefined process stete transition model.
+Figure 2.3.2.2.1.2 depicts corresponding state transitions inaccordance withtheoperational modes
+ofthepartition.
+2.3.2.2.1.1 Process States
+Theprocess stetes asviewed bythe0/Sareasfollows:
+1.Dormant —Aprocess thatisineligible toreceive resources forscheduling. Aprocess isin
+thedormant state before itisstarted andafter itisstopped (orterminated, eg., asaresult of
+ahealth monitoring event).
+2.Ready —Aprocess thatiseligible forscheduling. Aprocess isintheready stete ifitisableto
+beexecuted butisnotcurrently inarunning state.
+3.Running —Aprocess thatiscurrently executing onaprocessor core. Aprocess isinthe
+running stete ifitiscurrently being executed byaprocessor core. Aprocess mayremain in
+therunning state duetoahealth-monitoring event causing theerror handler process tobe
+invoked andthepartition isconfigured topause running processes while theerror handler
+process isrunning.
+4.Waiting —Aprocess thatisnotallowed toreceive resources eligible forscheduling untila
+particular event condition occurs. Aprocess isinthewaiting stete ifoneorbothofthe
+following areapplicable:
+Thefirstreason isoneofthefollowing (waiting onaresource):
+•waiting onadelay
+•waiting onasemaphore
+•waiting onaprocess period
+Copflhi ARINC indini‘y Act‘.~un
+Provid.d byHSMaii,d uM.. icens. wOhARINC Ltsnsw..O,hI D.f.nc. GntH &Co.KGUbw,,ng.N9*a393004. Us.r.Nown.nMwiw,
+NOssp,odud.on 0Cr.~w..hfr.g psmM w~hoj‘ Ice,.. I,cm INS Hoi ForReal., 03d3012020 0157.45 MOTARINC SPECIFICATION 653, PART 1—Page 16
+waiting onanevent2.0SYSTEM OVERVIEW
+•waiting onamessage
+•waiting onthestartofthepartition‘s NORMAL mode
+•waiting toown amutex (when multiple processor cores arcassigned toa
+partition), including thepreemption lock
+Thesecond reason is:
+suspended (waiting forresume)
+5.Faulted —Aprocess thatisnolonger running duetotheprocess causing ahealth
+monitoring error detected bytheOISthatdoes notpermit theprocess tocontinue torun
+(i.e., fatal error). When theprocess causes afatalerror (seeSection 2.4.2.1), continued
+operation isnotpossible. Processes thatreport anapplication error oroverrun their
+deadlines willcontinue tobeeligible torun(i.e.,willnotresult inafaulted process state). A
+faulted process must bestopped before itcanbestarted again.
+2.3.2.2.1.2 Process State Transitions Versus Partition Mode Transitions
+Copytighl *RINC lnduslry AcOoities
+Provid.d byIHSM~I und., tons. n.415ARIHC
+Nor.producto Ornetvuor*ing p.rmdl.d u4Soos hCmnnO (rom INSFigure 2.3.2.2.1.2 —Process States andState Transitions inAccordance withtheModes ofthe
+Partition
+Lic.nsoeDi,hI DelsuIc. GmbH Co.KGUbeding.,v9968393~4 Us,InNucnwnoloII.
+Nol1crR.s.b. 03130(2020 01:57:49 (ADTARING SPECIFICATION 653, PART 1—Page 19
+2.0SYSTEM OVERVIEW
+2.3.2.2.1.3 Process State Transitions
+COLD_START andWARM_START modes correspond totheinitialization phase ofthe partition.
+State transitions occur asfollows:
+(1)Dormant Ready
+When aprocess isstarted byanother process andthepartition isintheNORMAL mode.
+Also, when anaperiodic process isdelay started (DELAY_TIME =0)byanother
+process andthepartition isintheNORMAL mode.
+(2)Ready Dormant
+When aprocess isstopped byanother process thepartition isin NORMAL mode.
+(3a) Waiting Ready
+When thepartition transitions from theinitialization phase totheNORMAL mode, anda
+process isanaperiodic process started during initialization phase (and wasnotsuspended
+during initialization phase).
+(3b) Waiting Ready
+Either when asuspended process isresumed, ortheresource thataprocess waswaiting
+onbecomes available oratime-out aprocess waswaiting onexpires.
+Comment: Aperiodic process waiting onitsperiod goes automatically totheready state
+when theawaited release point isreached. Aperiodic process sastactivation (e.g.,
+after being started while intheNormal mode) willbecalculated using thestart ofthe
+next timewindow associated with thepartition thathasbeen configured forperiodic
+processing start (seeSection 2.3 13)
+(4)Ready -Waiting
+When aprocess issuspended byanother process within thepartition.
+(5)Running Ready
+When arunning process waits onaDELAY_TIME ofzero andthere areother ready
+processes thathave thesame priority value. Also, when arunning process ispreempted by
+another process within thepartition.
+(6)Ready —Running
+When aprocess isselected forexecution.
+(7)Running Waiting
+When arunning process suspends itself orwhen aprocess attempts toaccess aresource
+(semaphore, event, message, delay orprocess period) which isnotcurrently available and
+theprocess chooses (e.g., bysetting anon-zero timeout) towait.
+Waiting ontheprocess period means thattheperiodic process waits untilthenextrelease
+point byusing thePERIODIC_WAIT service.
+Co~h9I,l ARINC Pnd,ot,y M5n4*O
+P,o‘.ld.d byHSMa,NI und., I~n,. o.tRINC Ljc.no...Di.hI O.f.nc. GmbH &CoKGUb.,1ngmV9968393~4. U.wNotrn.n.I.Ua
+Ne‚.p,oducljon 0,refrgorbWQ p.wnpN.d wdhos 1019 korn IHS Not(0,R...i., 03d3012020 0157.49 lOtARINC SPECIFICATION 653, PART 1—Page 20
+2.0SYSTEM OVERVIEW
+When arunning process issuspended byanother running process (when multiple processor
+cores areallocated tothepartition).
+(8)Running —Dormant
+When arunning process stops itself.
+When arunning process isstopped byanother running process (when multiple processor
+cores areallocated tothepartition).
+(9a) Waiting —Waiting
+When aprocess already waiting toaccess asemaphore, anevent, amessage, oradelay is
+suspended. Also, when aprocess which isbothwaiting toaccess aresource andis
+suspended, iseither resumed, ortheresource becomes available, orthetime-out expires.
+(9b) Waiting —Waiting
+When thepartition goes from initialization phase toNORMAL mode, andaprocess isa
+periodic process thatwasstarted during initialization phase. Also, when aprocess isan
+aperiodic process thatwassuspended ordelayed started during theinitialization phase.
+(9c) Waiting —Waiting
+When aprocess issuspended while thepartition isintheinitialization phase. Also, when a
+suspended process isresumed while thepartition isintheinitialization phase (i.e.,lt
+remains inthewaiting state)
+(10) Waiting —Dormant
+When aprocess isstopped byanother process within thepartition. Note thisapplies toboth
+initialization phase andNORMAL mode.
+(1la)Dormant —Waiting
+When aprocess isstarted andthepartition isintheinitialization phase.
+(1ib)Dormant —Waiting
+When aperiodic process isstarted (either with adelay ornot)andthepartition isinthe
+NORMAL mode. Also, when anaperiodic process isdelay started (with DELAY TIME>
+0)andthepartition isintheNORMAL mode
+(12) Dormant —Dormant
+When thepartition transitions from initialization phase toNORMAL mode andaprocess has
+notyetbeen started.
+(13) Running —Running
+When arunning process invokes anAPEX service thatgenerally results inachange in
+process state anditreturns without changing theprocess state (e.g., passes a
+DELAY_TIME ofzero, oruseofPERIODIC_WAIT under some conditions, seeSection
+2.3.3).
+Copyiighl ARINC I,dusPyMh,ile,
+P,o,id.d byIHSMau under humus OmohARPNC UCSrO..uDu&IP Dermuic. GmbH &CoKGUbedunge~m9€~393~4, Uumflormmusuelle.
+NOreproduicuknor nmuwu,lui,g p.rmihl.d wihP~ih Ncmmurom IHS Hoi POPRauhe 0Y30f202001,57;49 MDIARING SPECIFICATION 653, PART 1—Page 21
+2.0SYSTEM OVERVIEW
+When arunning process does notmake progress because theerror handler process is
+running andthepartition hasbeen configured topause processes running concurrently on
+other processor cores when theerror handler process isrunning. When theerror handler
+process completes, theprocesses maycontinue tomake progress.
+(14) Running —Faulted
+When arunning process ishalted bythe0/5duetotheprocess causing ahealth
+monitoring error forwhich continued execution isnotfeasible (i.e., fatalerror).
+(15) Faulted —Dormant
+When afaulted process isstopped byanother process while thepartition isinNORMAL
+mode.
+When thepartition restarts inCOLD_START orWARM_START mode, thepreviously created
+processes nolonger exist andwillneed tobere-created.
+State transitions mayoccur automatically esaresult ofcertain APEX services called bythe
+application software toperform itsprocessing. They mayalsooccur asaconsequence ofnormal
+O/Sprocessing, duetotime-outs, faults, etc.
+2.3.2.3 Process Scheduling
+Oneofthemain activities ofthe0/5istoarbitrate thecompetition thatresults inapartition when
+multiple processes ofapartition concurrently request useoftheavailable processor cores. The0/5
+manages theexecution environment foreach partition, dispatching andpreempting processes
+based ontheir processor core afflnity assignments, respective priority levels, andcurrent states.
+Themain characteristics oftheprocess scheduling model used atthepartition level are:
+1.Thescheduling unitisanAPEX process.
+2.Each process hasacurrent priority.
+3.Thesetofprocesses eligible forrunning isrestricted tothose processes intheready or
+running states fortheactive partition.
+4.Theerror handler process (see Section 2.4.2.1), ifdefined, hashigher priority over allother
+processes, including aprocess thathaslocked preemption. Partition configuration (viaa
+service call)controls whether non-faulted processes continue toruninparallel withtheerror
+handler process orwhether other non4aulted running processes donotmake progress (i.e.,
+arepaused) while theerror handler process isrunning.
+5.Arunning process thathaslocked preemption canonly bepreempted bytheerror handler
+process.
+6.Theprocess scheduling algorithm ispriority preemptive. Ifarunning process ishigher
+priority than anyprocess intheready state, therunning process willnotbepreempted.
+7.During anyprocess rescheduling event (caused either byadirect request from arunning
+process oranypartition internal event), the0/5willselect forrunning upto‘N‘processes
+concurrently, where ‘N‘isthenumber ofprocessor cores assigned tothepartition. Any
+process whose afflnity isaspecific processor core isrestricted torunonlyonthatprocessor
+core. Processes thathave higher (most positive) current priority willbescheduled onthe
+processor cores over lower priority processes, taking intoaccount anycoreaffinities
+assigned totheprocesses.
+Co~t19ItI ARINC Irdu,Iry Mlpgit..
+Pto4idd byJHSMa&.t und., Pc~ns~ v.~th*auNC LIc.nu...O&u Dd.rc* GmbH 1Co.KGUb.,~,g.tu99t8393«t4, U,sN,r,r.m~I~,
+Nor,p.oduc1~on wn.knt.*itg p.niiill.d witJtouI Wc.nse rumIHS NottotRnaI.. Oa‘30Q020 01:57.49 kOTARINC SPECIFICATION 653, PART 1—Page 22
+2.0SYSTEM OVERVIEW
+COMMENTARY
+Byallprocesses having anaffinity foraspecific processor core, theresulting
+behavior isthateach processor core assigned tothepartition willhave afixed setof
+processes thatwillbescheduled onlt.
+When apartition isassigned asingle processor core (e.g., single core processor),
+theOISselects thehighest current priority process intheready state within the
+partition toreceive processor resources.
+8.lfseveral ready processes have thesame current priority, the0/5selects aprocess that
+hasbeen continuously eligible forrunning thelongest time atthatpriority value.
+Note however thatifprocess Aisrunning andispreempted byhigher-priority process B,
+process A(given thatitspriority wasnotmodified) willbeselected torunbefore other
+processes thathave thesame priority asprocess A.
+lfprocess Alowers itspriority tobethesame priority asready process C(and process A
+hasnotlocked preemption), thecurrent process Awillbethenewest process ready atthat
+priority level andwillbepreempted byprocess C.
+Arunning process willcontrol theassigned logical processor core resources untilanother
+process rescheduling event occurs.
+9.Periodic andaperiodic scheduling ofprocesses arebothsupported.
+COMMENTARY
+Therequirement forperiodic andaperiodic scheduling ofprocesses does notimply
+thatthe0/5must distinguish between twotypes ofprocesses. ltmeans thatthe
+APEX Interface provides theapplication software withtheability torequest
+scheduling ofprocesses onaperiodic oraperiodic (e.g., event-driven) basis.
+10.Alltheprocesses within apartition share theresources allocated tothepartition.
+When periodic processes arestarted, thetime they actually start isbased onthepartition‘s
+configured periodic processing start designations. Each ofthepartition‘s allocated partition time
+windows areindividually designated aswhether they areorarenotthepartition‘s periodic
+processing startrelease points. Forperiodic processes, thefirstrelease point oftheprocess is
+relative tothestartofthepartition‘s nextpartition timewindow configured asaperiodic
+processing start release point. Forperiodic processes, subsequent process release points will
+occur attheprocess‘s defined period.
+COMM ENTARY
+When twoormore periodic processes within apartition have thesame priority and
+delay, itisimplementation dependent astotheorder theprocesses willbestarted at
+therelease point. When twoormore processes have thesame delay butaffinities for
+different processor cores, itisimplementation dependent astotheorder the
+processes willbestarted attherelease point.
+Aperiodic processes onlyhave aninitial release point. When aperiodic processes arestarted, their
+starttime isrelative tothecurrent time.
+2.3.2.4 Process Priority
+Three types ofpriority arerepresented inthesystem, current, base, andretained. Current priority is
+thepriority used bythe0/8forscheduling andprocess queues. Base priority isthepriority used
+when theprocess 5initially started. Service activities such aschanging process priority orobtaining
+Copwighl ARIOC tdusby Acbviii.s
+Ptovidsd byIHSMono, und., ans. no‘s RINC Lflns.s°DP,N D.(.~s GmbH &CoKGUb.ding0iv9968393~4. Usm.Hu,rnen.l.lb.
+No‚sprodociion 0,neiwunl000 psnndi.d ‚nothosil ‚ans. Irun, HS HoilotRsnI.. O3~3O~2o20 01,57:49 MDTARING SPECIFICATION 653, PART 1—Page 23
+2.0SYSTEM OVERVIEW
+amutex have noimpact onbase priority. Retained priority isthepriority thataprocess willbe
+restored towhen itreleases ownership ofamutex. Theretained priority istypically thecurrent
+priority oftheprocess when itobtained ownership ofthemutex. IftheSET_PRIORITY service is
+invoked onaprocess thatowns amutex, theretained priority willbeupdated tothenewpriority
+value. TheGET_PROCESS_STATUS service canbeused toobtain thebase andcurrent priority.
+2.3.2.5 Process Waiting Queue
+When arunning process makes aservice request thatcauses theprocess toblock, theprocess‘s
+state issettoWAITING, andtheprocess isplaced onaprocess queue. Associated witheach
+potentially blocking resource (e.g., queuing port, buffer, semaphore, event, mutex) isaprocess
+queue. Processes areplaced ontheprocess queue based onaFirst lnfFirst Out(FIFO) orpriority
+queuing dicipline defined when thecreate service fortheresource wasinvoked andthecurrent
+priority oftheprocess (when queuing discipline ispriority order).
+2.3.2.6 Process Preemption Locking
+Support forprocess preemption locking isprovided. Basic preemption locking services
+(LOCK_PREEMPTION andUNLQCK_PREEMPTION) permit arunning process toown a
+preemption lockthatprevents other processes from preempting itsuseofprocessor core resources.
+Theowning process could beexecuting acritical section oraccessing resources shared bymultiple
+processes ofthesame partition. Acritical section may beforaccess forspecific areas ofmemory,
+certain physical devices, orsimply thenormal calculations andactivity ofaparticular process. The
+preemption locking services manage asingle preemption lockmutex predefined bytheOISforthe
+partition. When aprocess owns thepreemption lockmutex, other processes areprevented from
+owning thepreemption lockthrough either process scheduling (eg., partition onlyhasasingle
+processor core orallprocesses thatusethepreemption lockmutex have anaffinity forthesame
+processor core) orbyblocking (e.g., when processes running onother processor cores invoke
+LOCK_PREEMPTION). Asetofmutex services (seeSection 2.3.6.2.3) provide additional mutual
+exclusive access services thatcanbeutilized concurrently bymultiple processes (i.e., multiple
+processes accessing different mutexes).
+TheLOCK REEMPTION andUNLOCK _PREEMPTION services areused tomanage the
+preemption locking mutex andthepartition‘s locklevel. When thepartition‘s locklevel value is
+greater than 0,therunning process thatIocked preemption cannot bepreempted byanother
+process inthesame partition. When thelocklevel value is0,arunning process canbepreempted
+byanother ready process.
+Preemption locking hasnoimpact onthescheduling ofother partitions. ltonlyaffects scheduling of
+processes within apartition.
+When aprocess owns thepreemption lock(oramutex), theprocess isnotpermitted toblock as
+partofcalling anARINC 653service (anerror code willbereturned).
+COMMENTARY
+Theability tointervene withthenormal rescheduling operations oftheoperating
+system does notimply thattheapplication software isdirectly controlling the0/5
+software. Since lockpreemption isprovided bythe0/Sandallresultant actions and
+effects areknown beforehand, theintegrity ofthe0/5remains intact andunaffected
+bytheservice requests.
+Copy~hrARINC klduMry Acb.ilk,
+Pro.ld.d byIHSMark“ u.dr IceMa ‚qirh AR~NC lt.ns.eO.bp D&,rc. GmbH &Co.KGUberIngrnWOßeSOSOO4. Uw.N0mw,~eIk.
+No.produdkn 0!Mtet~n9 p.r,flU.d .~flooI her,.. (,od. IHS Nol(0.Rns~, 03)3&~020 01.S7;49 MUTARINC SPECIFICATION 653, PART 1—Page 24
+2.0SYSTEM OVERVIEW
+2.3.2.6.1 Concurrent Running Process Preemption Locking
+When apartition isconfigured tohave access tomultiple processor cores, multiple processes may
+runconcurrently. Only onerunning process atatime canhave preemption locked (i.e., ownthe
+preemption lockmutex). Other running processes thatattempt tolockpreemption willbeblocked
+andsettowaitonthepreemption lockmutex‘s queue inaFIFO basis. When arunning process no
+longer haspreemption locked, aprocess willberemoved from thepreemption lockmutex‘s queue,
+beconfigured ashaving locked preemption, andscheduled torunononeoftheprocessor cores
+theprocess iseligible torunon.Other processes canconcurrently runonother processor cores
+assigned tothepartition aslongasthey donotattempt tolockpreemption.
+Arunning process may have been assigned acore affinity. Useofpreemption locking does not
+impact theassigned core affinity (i.e.,theprocess isscheduled torunusing itsassigned core
+affinity).
+COMMENTARY
+When multiple processes uselockpreemption (e.g., tocontrol access todifferent resources
+orexecution sequences), some process blocking mayoccur even though theresources and
+execution sequences areused byseparate setsofprocesses. Separate mutexes (see
+Section 2.3.6.2.3) canbeused inheuoflockpreemption toseparately manage access to
+each resource andexecution sequence.
+2.3.3 Time Management
+Time management isanimportant characteristic ofan0/5used inreal-time systems. Time is
+unique andindependent ofpartition execution within anintegrated module. Alltimevalues or
+capacities arerelated tothisunique time andarenotrelative toanypartition execution. The0/5
+manages thesystem ciock anduses lttoprovide partition timewindows tormodule
+scheduling; deadline, periodicity, anddelays forprocess scheduling; andtime-outs forintrapartition
+andinterpartition communication. These mechanisms aredefined through attributes orservices.
+romanapphication perspective thesystem ciock isanOIS-managed resource that
+monotonically increases with elapsed time atafixed rate
+Atimecapacity isasstgned toeach process aspartofprocess creation. ltrepresents the
+response time given toaprocess forsatisfying itsprocessing requirements.
+COMMENTARY
+Time capacity isassigned toeach periodic andaperiodic process andisused toset
+process‘s deadline. Ablocked process sdeadhine willcontinue tobeevaluated
+while itisblocked. Aperiodic process sdeadline 5reset byinvoking the
+PERI0DIC_WAIT service. Anaperiodic process sdeadline 15reset byusing the
+stopandstart services.
+When aprocess isstarted (either explicitly viaaservice request orattheendoftheinitialization
+phase), itsdeadline issettothevalue ofcurrent time plustimecapacity. Thisdeadline time may be
+postponed bymeans ofthe REPLENISH service. Note thatthiscapacity isanabsolute duration of
+time, notanexecution time. This means thataprocess deadline overrun willoccur even when a
+process isnotrunning inside oroutside thepartition timewindow, butwillbeacted upon onlyinside
+apartition timewindow ofitsownpartition.
+CopyiighI ARINC Indu.tyAc~~I.s
+Pro.~d.d by015Mal uoder lcen.s wfl*RINC Lkr.so,=ti.N DiEnt. GmbH Co.KGUbedingen9900393004. U,nqorm.,fllb.
+Nomproductknor niEworidng p.rnlt.d v,,thool 9cm.. ‚mm IHS NolfoeRnaI.. 03,30,2020 01:57:49 MDTARINC SPECIFICATION 653,PART 1—Page 25
+2.0SYSTEM OVERVIEW
+COMMENTARY
+Since thedeadline time isabsolute, configuration modifications tothepartition‘s
+timewindows canresult indeadline overruns. Dependencies between process
+deadline andthepartition timewindows include whether apartition‘s duration is
+divided intomultiple timewindows.
+Time replenishment determines thenextdeadline value asrepresented inFigure 2.3.3.
+Figure 2.3.3 —Time Replenishment
+Aslongasaprocess performs itsentire processing without using itswhole timecapacity, the
+deadline ismet. Ifaprocess requires more processing thanthetime capacity, thedeadline is
+missed. When thedeadline ismissed, ahealth monitoring error willberaised (see Section 2.4).
+COMM ENTA RY
+Thehealth monitoring configuration tables define atwhat level (process, partition, or
+module) adeadline miss error willbehandled foreach partition. lftheallocated
+handler does notresolve thedeadline miss error (i.e.,error handler process didnot
+modify theerroneous process‘ state, oran“ignore“ recovery action wasutilized), the
+subsequent behavior oftheprocess thatmissed thedeadline is0/8implementation
+dependent. ltisstrongly recommended (forportability reasons) thatdeadline miss
+errors bemanaged byhealth monitoring instead ofrelying onimplementation
+dependent behavior. lmplementation dependent behaviors could include:
+•Theprocess retains itspre-deadline miss state (eg., stillrunning ifitwasthe
+previously running process), withanewdeadline time notbeing setforthe
+process untiltheprocess invokes thePERIODIC_WAIT service (i.e.,
+expiration ofaprocess‘ deadline does notaffect theprocess‘ period).
+Invocation ofPERIODIC_WAIT during theprocess‘ nextperiod results inthe
+process being eligible torunimmediately (i.e.,toperform itsintended functionBudget Start Replenish Request
+‘1‘
+Budget Time
+ist
+deadline
+Time capacityTime
+4—missed
+Budget T
+CopynghlARlNC lndusIty ALfrMifl
+P,owd.d byIHSMach und., Ic.n,. will,ARINC
+Nowp,odud~nor n.t.tcddng p.millod w6lhOuI Ic.,w. 110w IHSLt.n...‘ewN Dwla10e GmbH 8CoKGUb,,angwV000ß3O320l, UuwNo,rn.r,M.V..
+HoITorBeuel.. 03!2012020 01:5740 kOTARINC SPECIFICATION 653,PART 1—Page 26
+2.0SYSTEM OVERVIEW
+foritsnextperiod). Failure toinvoke a2‘~PERIODIC_WAIT before the
+deadline calculated fortheprocess‘ nextperiod resuits inanother deadline
+miss HMevent.
+•Theprocess retains itspre-deadline miss state (eg., stillrunning ifltwasthe
+previously running process), withtheOISextending theprocess‘ deadline
+timetoitsnextrelease point (i.e., skiponeprocess period andutilize itto
+complete theoverrun oftheprevious period). Invocation ofPERIODIC_WAIT
+during theextended period results inprocess waiting onitsnextrelease
+point. Failure toinvoke PERIODIC_WAIT during theextended period results
+inanother deadline miss HMevent.
+Atime-out delay ordeadline canexpire outside ofanyofthepartition‘s timewindows. ltisacted
+upon atthebeginning ofthepartition snext timewindow.
+COMMENTARY
+Thenotion oftime used here islocal toanintegrated module andisneeded fortime
+management within thepartitions onthatintegrated module. Ifapartition needs a
+timestamp forareason such asfault reporting, adifferent time may beused. That
+timevalue could come from anaircraft clock vianormal interpartition communication
+means.
+2.3.4 Memory Management
+Partitions, andtherefore their allocated memory spaces, aredefined during system configuration
+andinitialization. There arenomemory allocation services intheAPEX interface.
+Amemory space isarange ofaddresses thattypically represent access toacorresponding range
+ofphysical memory. Amemory space canalsorepresent access tomemory mapped registers
+(e.g., anI/Odevice). Aunique setofmemory region instances areutilized toconfigure themapping
+ofmemory spaces intoapartition‘s address space. Each partition (unless explicitly configured to
+share amemory space) willbeallocated unique memory spaces. Allprocesses ofapartition will
+have access tothesame memory spaces. Thisincludes processes thatarerunning ondifferent
+processor cores.
+Ifanapplication uses onlyARINC 653services, then noother action onthepartoftheapplication is
+necessary tomaintain memory coherency andconsistency ofthedatatransferred through these
+services.
+COMMENTARY
+Theapplication isresponsible forresolving memory coherency andconsistency
+concerns when data isexchanged bymeans other than ARINC 653services (eg.,
+global variables).
+Aplatform maycontain memory andcache devices thatareintended tocontain the
+same memory range. Memory coherency isensuring thatthecontents inthese
+devices areupdated when thesame memory range inanother device ismodified.
+When apartition isallocated multiple processor cores, thismayinclude ensuring
+coherency between contents ofcache devices dedicated toeach processor core.
+Theplatform mayinclude mechanisms (including hardware) thatsupport orprovide
+ameans tosupport memory coherency (eg., cache flushing instructions).
+Cop1wrighI ~INC I.~usI~ Ac5v.1~ms
+Prov~ed byINSMar8iI ‚nd., ~cenle w~h~INC Uc.n,n.O~N DøO.nc. GmbH &Ca.KGUbodIng,rWRO68393~4 U..,mNomi.ns~W..
+NOr.orOd,OtwI orn.tmorIIkIg pmmill,d ½‘IhouI itens. rom INS NollotResal,. 03G8‘2020 91:5749 MDIARINC SPECIFICATION 653,PART 1—Page 27
+2.0SYSTEM OVERVIEW
+Memory consistency involves ensuring theorder ofasequence ofmemory updates
+amongst asetofprocessor cores (when order isimportant). Theplatform may
+include mechanisms (including hardware) thatsupport orprovide ameans tosupport
+memory consistency (e.g., memory barrier instructions).
+2.3.5 Interpartition Communication
+Amajor partofthisstandard isthedefinition ofthecommunication between APEX partitions.
+Interpartition communication isageneric expression used inthisstandard. Theinterpartition
+communicatjon definitions contained inthisstandard areintended tofacilitate communications
+between ARINC 653appiication partitions residing onthesame integrated module orondifferent
+integrated modules, asweilascommunications between anARINC 653application partition and
+non-ARINC 653equipment external tothatpartition‘s core module. Standard interpartition
+communication isabasic requirement forsupport ofreusable andportable application software.
+Allinterpartition communication isconducted viamessages. Amessage isdefined asacontiguous
+block ofdata offinite length. Amessage issentfrom asingle source tooneormore destinations.
+Thedestination ofamessage isapartition, andnotaprocess within apartition.
+COMMENTARY
+Theexpression “contiguous block‘ means asequential dataarrangement inthe
+source anddestinations memory areas. Sending amessage without format
+conversion isachieved bycopying themessage from memory tomemory viathe
+communication network. This principle does notrequire themessage tobeentirely
+transmitted inasingle packet.
+TheAPEX interface supports communication ofthefullmessage, regardless ofanymessage
+segmentation applied bythe015. Note thatthisdoes notprohibit apartition from decomposing a
+large message intoasetofsmaller ones andcommunicating them individually. TheOISregards
+them purely asseparate unrelated messages.
+COMMENTARY
+From theapplication viewpoint, amessage isacollection ofdatawhich iseither sent
+orreceived toffrom aspecific port. Depending ontheportimplementation, the
+messages allowed tobepassed inthatportmaybeeither fixed orvariable length.
+Thebasic mechanism forlinking partitions bymessages isthechannel. Achannel defines alogical
+linkbetween onesource andoneormore destinations, where thesource andthedestinations may
+beoneormore partitions. ltalsospecifies themode oftransfer ofmessages from thesource tothe
+destinations together withthecharacteristics ofthemessages thataretobesentfromthatsource
+tothose destinations.
+Partitions have access tochannels viadefined access points called ports. Achannel consists of
+oneormore ports andtheassociated resources. Aportprovides therequired resources thatallow
+aspecific partition toeither send orreceive messages inaspecific channel. Apartition isallowed to
+exchange messages through multiple channels viatheir respective source anddestination polis.
+Thechannel describes aroute connecting onesending porttooneorseveral receiving polis.
+From theperspective ofapartition, APEX communication services support thetransmission and
+receipt ofmessages viapolis, andarethesame regardless ofthesystem boundaries crossed by
+thecommunicated message. Therefore, thesystem integrator (nottheapplication developer)
+CopynghI ARPNC Irdud.y A&uil.s
+P,t,id.d byIHSMad.1 und., Pc~nIe nahARINC Lkwroe.Dl.hI O.f.no. GmbH &Co.KGUb.ning.rv9968393~4. Uuw-NonwubI~,
+Nomp,oducho., orn.N~n,ting p.rrnilffid .ahojl Iren,. imm IHS NdtueRast.. 0313000200‘ 5749 MOTARING SPECIFICATION 653, PART 1—Page 28
+2.0SYSTEM OVERVIEW
+configures thechannel connections within anintegrated module andthechannel connections
+between anintegrated module andcomponents external totheintegrated module.
+2.3.5.1 Communication Principles
+ARINC 653communications arebased ontheprinciple oftransport mechanism independence at
+partition level. ltisassumed thattheunderlying transport mechanism transmits themessages and
+ensures thatthemessages leave thesource portandreach thedestination ports inthesame order.
+Communications between partitions, orbetween partitions andexternal entities, usethesame
+services andareindependent ofthe underlying transport mechanism. Messages exchanged
+between twocompliant ARINC 653applications areidentical regardless ofwhether theapplications
+reside onthesame integrated module, orondifferent integrated modules.
+Thecore module isresponsible forencapsulating andtransporting messages, such thatthe
+message arrives atthedestination(s) unchanged. Anyfragmentation, segmentation, sequencing,
+androuting ofthemessage data bythecore module, required totransport thedatafrom source to
+destination, isinvisible totheapplication(s). Thecore module isresponsible forensuring the
+integrity ofthemessage data, i.e.,messages should notbecorrupted intransmission.
+Attheapplication level, messages areatomic entities (i.e., either thewhole message isreceived or
+nothing isreceived). Applications areresponsible forassuring thedata meets requirements for
+processing bythatapplication. Thismight include range checks, voting between different sources,
+orother means.
+ltistheresponsibility oftheapplication designer, inconjunction withthesystem integrator, to
+ensure thatthetransport mechanism chosen meets themessage transport latency andreliability
+required bytheapplication.
+COMMENTARY
+Thistechnique provides:
+•Thesystem integrator withfreedom tooptimize theallocation ofpartitions to
+processing resources within acore module oramong multiple core modules.
+•Portability ofapplications across platforms.
+•Network technology upgrades without significant impact toapplications.
+Communication within apartition uses services thatareanalogous totheexternal communication
+services.
+Thefollowing arelimitations onthebehavior ofAPEX communications:
+1.Theperformance andintegrity ofinterpartition communications isdependent onthe
+underlying transport mechanism (i.e.,communication media andprotocols), which isbeyond
+thescope ofthisstandard. When defining thefunctional behavior andintegrity ofqueuing
+andsampling portservices, itisassumed theunderlying transport mechanism supports this
+behavior. ltisthesystems integrator responsibility tospecify theend-to-end behavior ofthe
+communications system, assure functional requirements aremet, andcommunicate
+behavioral differences between thisstandard andtheimplementation toapplication
+providers.
+2.Although dataabstraction should assure parameter consistency, equivalent performance
+between differing transport mechanisms isnotguaranteed.
+3.Synchronous behavior between communication ports isnotguaranteed bytheAPEX
+interface. Thismay ormaynotbeafeature oftheunderlying system.
+Copyj1~h~ ARINC Induslry kOnil,.,
+P,&ded byIHSM*4 und., Oc000e w~h*RINC Lt.n,...O~hI Detenca GmbH 8Co.KGUb.dino.m~968303OO4 OnmNoml,nuI.b
+NOmproducum, ofn.t.nnting p.r,rüh.d v.,nhcut Ocmm. fronn IHS NdtotRenate. 03130n2020 01:57;dg 0~TARINC SPECIFICATION 653, PART 1—Page 29
+2.0SYSTEM OVERVJEW
+4.TheOISshould ensure thatthemessages provided bytheapplication aretransmitted tothe
+transport mechanism inthesame order. TheOISshould ensure thatthemessages received
+from thetransport mechanism aredelivered totheapplication inthesame order. ltis
+assumed thatthetransport mechanism maintains ordinal integrity ofmessages between
+source anddestination.
+5.Anyparticular message canonlyoriginate from asingle source.
+6.When arecipient accesses anewinstance ofamessage, ltcannolonger request access to
+anearlier instance. ltcannot beassumed thattheOISwillsave oldversions ofmessages.
+2.3.5.2 Message Communication Levels
+Messages may becommunicated across different message passing boundaries asdefined below:
+1.Within core modules —allows messages tobepassed between partitions supported bythe
+same core module. Whether themessage ispassed directly, oracross adata bus, is
+configurable bythesystem integrator foreach message source.
+2.Between thecore modules —allows messages tobepassed between multiple core
+modules viaacommunication bus.
+3.Between core modules andanon-ARINC 653component —allows messages tobe
+passed between core modules anddevices thatdonothostanARINC 653O/S(traditional
+LRUs, sensors, etc.)viavarious communication buses.
+Intraditional LRUs which useanAPEX interface, messages may bepassed either directly between
+partitions onthesame LRU (forLRUs supporting multiple partitions) orbetween partitions andthe
+LRU buses.
+Interpartition communication conducted externally across core module boundaries should conform
+totheappropriate message protocol. Themessage protocol tobeused forthiscommunication is
+system specific. Thesystem partition and/or theOISI/Odevice driver areresponsible for
+communicating these messages overthecommunication bus,taking thephysical constraints ofthe
+busintoconsideration.
+Characteristics ofcommunication media mayrequire thesegmentation ofanexternally
+communicated message. Thissegmentation istransparent totheapplication software andisthe
+responsibility oftheI/Omechanisms provided bytheO/S.
+COMMENTARY
+Thisversion ofARINC 653does notaddress thecommunication protocol between
+core modules.
+2.3.5.3 Message Types
+Themessages may beofthetypes described inthefollowing sections.
+2.3.5.3.1 FixedlVariable Length
+Afixed length message hasadefined constant sizeforevery occurrence ofthemessage. A
+variable Iength message canvary insize, andtherefore, requires thesource tospecify thesize
+within themessage when transmitting lt.
+CopyrighI ARLNC PMu,Sy Mho,Ws
+Pro~4d.dbyHS4a,I4lunderIcen.ev6~hARINC Ltensee.OieN O.f.nc. Gw~H &Co.KGUb.,bn9.a~996393004, UW.N0,rfl.flS~IS,
+Na‚.p.odudi000tn.Lwofling p.roI~t.d W~9~OVt ~cfl0a From HS NotforRfl9t.. 030012020 01.5749 bCTARINC SPECIFICATION 653, PART 1—Page 30
+2.0SYSTEM OVERVIEW
+COMMENTARY
+Fixed length isbestsuited tothetransmission ofmeasurements, commands, status,
+etc.Variable length ismore appropriate tothetransmission ofmessages whose
+amount ofdata varies during runtime (e.g., listofairframes fortheTCAS function).
+2.3.5.3.2 PeriodiclAperiodic
+Periodic means thatthecommunication ofaparticular message isperformed onaregular iterative
+basis. Aperiodic means thatthecommunication isnotnecessarily periodic.
+COMMENTARY
+Forperiodic messages, ltisusual forrecipients tobedesigned tocope with
+intermittent lossofdata. Typically, thelastvalid data sample isused bytherecipient
+untileither thecontinued data loss isunacceptable oranewvalid sample is
+received.
+Periodic messages arebestsuited tothecommunication ofcontinuously varying
+data (e.g., AirSpeed, Total Pressure). Aperiodic messages arebestsuited tothe
+communication ofirregular events thatmayoccur atrandom intervals (eg., dueto
+anoperator-instigated action).
+Nodistinction ismade bytheO/Sbetween periodic andaperiodic messages asthe
+instances ofmessage generation areimplicitly defined according tothenature ofthe
+partition‘s runtime activation (i.e., theperiodicity ofamessage isdictated bythe
+periodicity atwhich themessage issent).
+Discrete events should notbereported insingle periodic messages orshould be
+acknowledged within applications, atalevel above thatofthemessage passing
+protocol. Discrete events arebestsuited tobeing announced inaperiodic messages.
+2.3.5.3.3 Broadcast, Multicast andUnicast Messages
+Thisstandard provides support forbroadcast, multicast, andunicast messages. Abroadcast
+message issentfrom asingle source toalldestinations. Amulticast message issentfrom asingle
+source tomore than onedestination. Aunicast message issentfrom asingle source toasingle
+destination. Forqueuing mode, onlyunicast messages arerequired.
+COMMENTARY
+Thebehavior ofbroadcast andmulticast queuing isimplementation dependent.
+Thisstandard does notdirectly support client/server messages. Client/server support
+may beimplemented byapplications ontopofqueuing orsampling ports.
+2.3.5.4 Message Type Combinations
+(This section deleted bySupplement 1.)
+2.3.5.5 Channels andPorts
+Channels andports aredefined aspartofthesystem configuration activities. Thedefinition of
+channels isnotconfined tothecore module OISbutisrather distributed ontheconstituent core
+Copy‘ighI RINC Indost‘yAc~viIi.s
+P,ovid.d byIHSMed~~ undr AteM. vOIAARINC Lt.n.w0~hI D.t,~e 0rr~H &Co.KG0b4n90r00968393004. User.Nnn,I.U..
+Noreproduetion 00r,.twodioog p.rmitl.d wilhoul Icense Trum IHS NoT TonRenaTe. 03i~0G020 0157.49 MDTARING SPECIFICATION 653, PART 1—Page 31
+2.0SYSTEM OVERVIEW
+modules andLRUs ofthesystem. Each communication node (core module, gateway, I/Omodule,
+etc.) isassumed tobeseparately configurable (i.e.,through configuration tables) todefine how
+messages arehandled atthatnode. ltisthesystem integrator responsibility toensure thatthe
+different nodes crossed byeach channel areconsistently conflgured. Theconsequence isthatthe
+source, destinations, mode oftransfer, andunique characteristics ofeach channel cannot be
+changed atruntime.
+2.3.5.6 Modes ofTransfer
+Each individual portmay beconfigured tooperate inaspecific mode. Two modes oftransfer may
+beused: sampling mode andqueuing mode.
+COMMENTARY
+ltmay bepossible toconfigure communication such thatports operating indifferent
+modes (sampling orqueuing) canbeconnected tothesame channel; however, this
+isdependent ontheunderlying media andisoutside thescope ofthisstandard.
+Afullsetofservices hastobeprovided totheapplication software toaccommodate thetwomodes
+oftransfer, sampling mode andqueuing mode, andthetwotransfer directions, source and
+destination. OnIy thesubset ofservices whose functions arecompatible withtheportconfiguration
+(mode, transfer direction) willexecute correctly when thatportisaddressed; others willreturn an
+appropriate value ofthereturn code indicating thattherequest failed.
+Sampling ports andqueuing ports canbeused inanymode, i.e.,NORMAL, COLD_START, and
+WARM_START. ltisassumed thattheunderlying system supports thebehavior defined herein.
+Messages areallowed tobesegmented andreassembled. Thesegmentation andreassembling of
+messages aretransparent totheapplication.
+2.3.5.6.1 Sampling Mode
+Inthesampling mode, successive messages typically carry identical butupdated data. Noqueuing
+isperformed inthismode. Amessage remains inthesource portuntil itistransmitted bythe
+channel oritisoverwritten byanewoccurrence ofthemessage, whichever occurs first.Thisallows
+thesource partition tosend messages atanytime. Each newinstance ofamessage overwrites the
+current message when itreaches adestination port, andremains there until itisoverwritten. This
+allows thedestination partitions toaccess thelatest message.
+COMMENTARY
+Theperiodicity oftransmission isdetermined bythesource application initssending
+ofthemessages. Reception ofsuch messages isadditionally influenced bythe
+latency incommunicating themessages through theintermediate communication
+media (i.e., backplane bus,gateway, LRU-specific media).
+ltistheresponsibility oftheunderlying portimplementation toproperly handle datasegmentation. A
+partial message willnotbedelivered tothedestination port.
+2.3.5.6.2 Queuing Mode
+Inthequeuing mode, each newinstance ofamessage maycarry uniquely different data andisnot
+allowed tooverwrite previous ones during thetransfer. Nomessage should beunintentionally lostin
+thequeuing mode.
+COØfl9L ~INC h~do.tty AckolJ.,
+Prooidd byIHSMstIdl ‚td.r bein.. rn~9,ARINC Lbe.o..,-Dt.N D.f.nc. GmbH &Co.KGUb.thno.nV9968393®4. U.a.Nornw.M~.
+Nan.pr~udbn 0,n&rnotta,g pm,,,dt.d wb9,oot leiM. korn IHS NottorRn.t., 031390020 0157:49 MDTARINC SPECIFICATION 653, PART 1—Page 32
+2.0SYSTEM OVERVIEW
+Theports ofachannel operating inqueuing mode areallowed tobuffer multiple messages in
+message queues. Amessage sent bythesource partition isstored inthemessage queue ofthe
+source portuntil itistransmitted bythechannel. When themessage reaches thedestination port, it
+isstored inamessage queue until itisreceived bythedestination partition. Aspecific protocol is
+used tomanage themessage queues andtransmit messages inthesource portandinthe
+destination port inaFirst In/First Out(FIFO) order (seeSection 2.3.5.1, Communication Principles
+item d).Thisallows thesource anddestination ports tomanage thesituation where either the
+source ordestination queues arefull.Application software isresponsible forhandling overflow when
+thequeuing portisfull.
+Variable Iength messages aresupported inthequeuing mode.
+COMMENTARY
+Since theamount ofdatacarried byamessage mayvaryconsiderably,
+encapsulating thedata inafixed Iength message may notbeacceptable because of
+excessive usage ofRAM andbusbandwidth. Applications aretherefore expected to
+manage different types ofmessages, each withanappropriate Iength. Thechannel
+does notneed todistinguish between those different types ofmessages, butisonly
+required toaccept transmitting successive messages withdifferent lengths.
+ltisnotarequirement tohave trueaperiodic transmission ofmessages between thesource and
+destination ports.
+Apartial message willnotbedelivered tothedestination portinthequeuing mode.
+2.3.5.7 PortAttributes
+Inorder fortherequired communication resources tobeprovided tothepartitions, asetofunique
+attributes needs tobedefined toreach port. These attributes enable the0/5tocontrol and
+maintain theoperation ofports andportions ofchannels located within thecore module (orthe
+LRUs). Theportattributes aredefined intheconfiguration tables orbytheapplication when
+invoking aservice calltocreate theport. Therequired portattributes aredescribed inthefollowing
+sections.
+2.3.5.7.1 Partition Identifier
+Thepartition identifier denotes thepartition which isallowed tohave access totheport.
+2.3.5.7.2 Port Name
+Theportname attribute consists ofapattern thatuniquely identifies theportwithin thepartition that
+hasaccess tolt.This name isintended tobeused bytheapplication software todesignate theport.
+COMMENTARY
+Byusing portnames instead ofaddressing directly thesource/destination partitions,
+theapplication software ismore independent ofthecommunication network
+architecture. Theconfiguration ofportnames istheresponsibility ofthesystem
+integrator. ltshould benoted thatawell-chosen portname should refer tothedata
+passed intheportrather thantotheproducer/consumers ofthose data (e.g.,
+“MEASURED ELEVATOR POSITION“).
+CopyngI.tARINC Ir~ijsIqrMIr,itns
+Prov,dd by945Mar9it ‚~d.r urans. w~hARINC LtensansoisN DU,nc, GmbH &Cc.KGUb.suingeuV9968393~4, U,.rNom,.nsIsfie
+Ha.pr.d..clicn orn.uwouluing p.rmuulad w4hnoI urans. Fron HS NoltorRenal,. 03i30d2020 015749 MDTARINC SPECIFICATION 653,PART 1—Page 33
+2.0SYSTEM OVERVIEW
+2.3.5.7.3 Mode ofTransfer
+Themode oftransfer attribute denotes themode (je.,sampling mode orqueuing mode), which is
+expected tobeused tomanage themessages intheport.
+2.3.5.7.4 Direction
+Thedirection attribute indicates whether theportallows messages tobesent(thepartition is
+viewed asasource) orreceived (thepartition isviewed asadestination).
+2.3.5.7.5 Maximum Message Size
+Themaximum message sizeattribute defines themaximum number ofbytes asingle message may
+contain fortheport
+2.3.5.7.6 Maximum Number ofMessages
+Themaximum number ofmessages attribute applies tomessages inthequeuing mode only. This
+attribute defines themaximum number ofmessages thequeuing portmust handle without loss.
+COMMENTARY
+Themaximum message sizeandmaximum number ofmessages attributes areused
+todefine storage areas inthememory space ofthepartition, allowing messages
+passed intheporttobetemporarily buffered. Depending onthemode oftransfer
+andthetransfer direction, different message storage areas may berequired:
+1.Sampling mode, send direction —Noparticular message storage isrequired
+when asend request isissued bytheapplication software.
+2.Sampling mode, receive direction —Aone-message area isrequired tobuffer the
+lastcorrect message received bythepartition.
+3.Queuing mode, send direction —Amessage queue, managed onaFIFO basis, is
+required tobuffer thesuccessive messages tobesent. Thequeue isfilled upon
+send requests issued bytheapplication software, andcleared astheOISmoves
+themessages from thequeue.
+4.Queuing mode, receive direction —Amessage queue, managed onaFIFO basis,
+isrequired tobuffer thesuccessive correct messages received bythepartition.
+Thequeue isfilled astheO!Smoves correct received messages tothequeue,
+andcleared upon receive requests issued bytheapplication software.
+COMMENTARY
+Inallcases, applications should allocate enough memory space toassure the
+configuration deflned maximum message sizecanbereceived, regardiess ofany
+application protocol defined sizeassumptions.
+2.3.5.7.7 Refresh Period
+Therefresh period attribute applies tomessages received inthesampling mode only. Thisallows
+the0/5todetermine whether newmessages arrive ataspecified period from thelastmessage,
+regardless ofthereceive request rate.
+C.~noF4 PRINC Iod,,Iry AtSv9i.,
+pro~id.d byIHSMarkt order IannrnthARtNC LkeMeeDi•N Derkoc. GmbH &CcKGUb.dInged996839a~4, UnnNo,rnenotd~.
+NOr.pr.dudon orn.koo,Idng pe‘rMI.d wilhout Sen. korn INS HoItorRneI.. 03430*1020 Dl.57.40507ARINC SPECIFICATION 653,PART 1—Page 34
+2.0SYSTEM OVERVIEW
+2.3.5.7.8 Port Mapping
+Theportmapping attributes define theconnection between thatportandthephysical
+communication medla (e.g., memory, backplane bus,). Theportmapping consists ofattributes
+defining aphysical address and/or procedure thatmay beused tomaptheport. Use, meaning, and
+limitations ofthese attributes areimplementation dependent.
+COMMENTARY
+Messages received byaportmayoriginate either from another portofthesame
+integrated module orviaaninter-module communications mechanism. Messages
+sent byaportarerouted tooneormore other ports ofthemodule and/or theinter
+module communications mechanism inthesampling mode, whereas theyarerouted
+toeither oneother portoftheintegrated module ortheinter-module communications
+mechanism inthequeuing mode.
+Ports canbemapped tophysical addresses ortoprocedures (e.g., device drivers),
+bothofwhich canmaptheports toabackplane orcommunications device. A
+procedure mapping might beused when anintelligent I/Oprocessor isnotavailable
+tomove data to/from anexternal device. Inaddition, the0/5implementer may
+define anyother suitable mapping mechanisms. Anymechanism formapping ports
+must ensure thatmultiple partitions donothave write access tothememory space to
+which theportisbeing mapped whether itisaccomplished byaphysical address
+mapping, aprocedure mapping, orsome other mechanism. Thenotion ofshared
+memory canonlybesupported when the0/5controls theaccess tothememory
+location.
+2.3.5.8 Port Control
+Thecore module resources required tomanage aportarestatically defined atbuild time and
+initialized after power isapplied tothecore module. Once theports assigned toapartition have
+been initialized, theapplication software isallowed toperform send orreceive operations inthose
+ports. The0/5does notensure thatthechannels connected totheports have been entirely
+initialized. Thereason isthatthechannels maycross different nodes, andthese nodes maynot
+necessarily beinitialized simultaneously (i.e., iflocated ondifferent cabinets).
+Creating aportassociates, forthecurrent partition aportidentifier with aportname. Theport
+identifler isan0/S-defined value associated withtheportname atthecore module initialization.
+Useoftheportidentifier allows more efficient access totheportresources than useoftheport
+name.
+COMMENTARY
+Ifmessages aretransmitted inachannel andsome portions ofthatchannel have not
+been initialized, then afaultwillbedetected either bythedestination ports (message
+freshness check) inthesampling mode, orbythesource port(lack ofresponse) in
+thequeuing mode.
+Either fixed orvariable length messages areallowed tobecommunicated viaaport.AIength
+indication isprovided bytheapplication software when sending amessage andbythe0/5when
+theapplication software receives amessage.
+Copyrghl ARINC n4in(pyMIiiIios
+P,&d.d byIHSMvIdt und« ~cns wiI~ARINC Lic.nn..Oi.td Dd.nc. GmbH Co.KGUbeiling 968393~4. Us.r.No,rn.nhI•II.,
+Nor.produc~cnor n.twoddng pon,uned wiolool bog,,. fron, IHS NolIonfinal.. 03t2~2020 0157:49 MDlARINC SPECIFICATION 653, PART 1—Page 35
+2.0SYSTEM OVERVIEW
+Depending onitsmode oftransfer anditstransfer direction, aportoperates indifferent ways:
+1.Sampling mode, send direction —Each newmessage passed byanapplication‘s send
+request overwrites theprevious one. Each occurrence ofamessage cannot betransmitted
+more than once.
+2.Sampling mode, receive direction —Each correct (internally consistent) newreceived
+message iscopied tothetemporary storage area oftheportwhere itoverwrites the
+previous one. Thisarea isallowed tobepolled atrandom times, upon application software
+receive requests. Thecopied message andavalidity indicator arereturned tothe
+application software. Thevalidity indicator indicates whether theageofthecopied message
+isconsistent withtherequired refresh period defined fortheport.Theageofthecopied
+message isdefined asthedifference between thevalue ofthesystem clock (when
+READ_SAMPLING_MESSAGE iscalled) andthevalue ofthesystem clock when theOIS
+copied themessages from thechannel intothedestination port.
+3.Queuing mode, send direction —Each newmessage passed byanapplication‘s send
+request istemporarily stored inthesend message queue oftheport. Ifthequeue isfullor
+contains insufficient space fortheentire message tobestored, thentherequesting process
+ofthepartition enters thewaiting state orthesend request may becancelled. Thequeued
+messages aresegmented asrequired tosatisfy theunderlying communication media before
+they aretransmitted inFIFO order.
+4.Queuing mode, receive direction —Each correct (internally consistent) newreceived
+message ismoved tothereceive message queue. Theoldest message inthemessage
+queue isremoved from thequeue andpassed totheapplication software upon receipt of
+thereceive request. Ifthemessage queue isempty, therequesting process mayenter the
+waiting state orthereceive request may becancelled. Thechannel protocol mayprevent
+further segments from being received when thereceive message queue isfull,andrequest
+resending offailed segments. This applies onlytounicast transmissions.
+2.3.5.9 Process Queuing Discipline
+Thecommunication between partitions isdone byprocesses which aresending orreceiving
+messages. Inqueuing mode, processes maywaitonafullmessage queue (sending direction) or
+onanempty message queue (receiving direction). Rescheduling ofprocesses willoccur when a
+process attempts towait. Theuseoftime-outs willlimitoravoid waiting times.
+Processes waiting foraportinqueuing mode arequeued inFIFO orpriority order. Inthecase of
+priority order, forthesame priority, processes arealsoqueued inFIFO order. Thequeuing
+discipline isdefined bytheapplication aspartoftheservice csUused forcreation oftheport.
+COMMENTARY
+When queued messages requiring responses arepassed between partitions with a
+non-zero waittime, care must beused toensure thatfaults (such asexcessive
+delays ormissing datafrom theother partition) donotresult inundesired effects
+upon thereceiving partition.
+2.3.6 Intrapartition Communication
+Provisions forprocesses within apartition tocommunicate witheach other without theoverhead of
+theglobal message passing system areincluded aspartofthisstandard. Theintrapartition
+communication mechanisms arebuffers, blackboards, semaphores, events, andmutexes. Buffers
+andblackboards provide general inter-process communication (and synchronization), whereas
+semaphores, events, andmutexes provide inter-process synchronization. Allintrapartition message
+Capy.ight ARINC hidintpy AcIivi(ns
+Provid.d byIHSMaaIdl aad.r II..... ‚MbARINC LIcn...Di.N 0ts.cø GaIÖH &CcKGt)b.lng.iVOO€8303004, UnmNo.rrnl&I..
+Namprod,dbr, ar..tnodcWo p.rmio.d *4hau( I~m. from INS Nol(0,R...Ie. 03fl012020 01:57.40 lOTARINC SPECIFICATION 653, PART 1—Page 36
+2.0SYSTEM OVERVIEW
+passing mechanisms must ensure atomic message access (i.e., partially written messages cannot
+beread).
+There arenoconfiguration table attributes associated withintrapartition communications. Attributes
+associated withintrapartition communications arespecified bytheapplication when invoking the
+corresponding create operation.
+Aswithprocess andportcreation, theamount ofmemory required tocreate intrapartition
+communication mechanisms isallocated from thepartition‘s memory resources, which isdefined at
+system build time. Anapplication cancreate asmany intrapartition communication mechanisms as
+thepartition‘s memory resources willsupport.
+2.3.6.1 Buffers andBlackboards
+Inter-process communication ofmessages isconducted viabuffers andblackboards. These
+mechanisms support thecommunication ofmessages between multiple source anddestination
+processes. Thecommunication isindirect inthatparticipating processes address thebuffer or
+blackboard rather than theopposing processes directly, thusproviding alevel ofprocess
+independence. Buffers allow thequeuing ofmessages whereas blackboards donotallow message
+queuing.
+Rescheduling ofprocesses willoccur when aprocess must waitforamessage. Theuseoftime
+outswilllimitoravoid waiting times.
+2.3.6.1.1 Buffers
+Inabuffer, each newinstance ofamessage maycarry uniquely different data andtherefore isnot
+allowed tooverwrite previous ones during thetransfer.
+Buffers areallowed tostore multiple messages inmessage queues. Amessage sent bythe
+sending process isstored inthemessage queue inFIF0 order. When using buffers, nomessages
+arelost(thesender willblock ifthequeue isfuII).Thenumber ofmessages thatcanbestored ina
+buffer isdetermined bythedefined maximum number ofmessages, which isspecified atbuffer
+creation time.
+TheCREATE_BUFFER operation creates abuffer forusebyanyoftheprocesses inthepartition.
+Atcreation, thebuffer‘s maximum message size, maximum number ofmessages, andqueuing
+discipline aredefined.
+Processes waiting onabuffer arequeued inFIFO orpriority order. Inthecase ofpriority order,
+processes withthesame priority arequeued inFIF0 order.
+Ifthere areprocesses waiting onabuffer andifthebuffer isnotempty, thequeuing discipline
+algorithm (FIFO orpriority order) willbeapplied todetermine which queued process willreceive the
+message. The0/Swillremove thisprocess from theprocess queue andwillputitintheready
+state. The0/5willalsoremove themessage from thebuffer message queue.
+Rescheduling ofprocesses willoccur when aprocess attempts toreceive amessage from an
+empty buffer ortosend amessage toafullbuffer. Thecalling process willbequeued fora
+specified (aspartoftheservice call)duration ofreal-time. famessage isnotreceived orisnot
+sent inthatamount oftime, the0/5willautomatically remove theprocess from thequeue andputit
+intheready state (unless another process hassuspended it).
+Capy‘ighI ARINC ~nIsy MbviIös
+Pro,,id.d byIHSMeddt under litern. wChARINC Ltnfl.Oi.hI Delert. GntH &CO.KGUberer,90ft19968393004. UeeHormenul.ll..
+NOreproduceknor n.lwo,ldro pennnlled wdhoul erste. trug, IHS NotIonResoie. 0313&2020 0l:57t49 MDTARING SPECIFICATION 653, PART 1—Page 37
+2.0SYSTEM OVERVIEW
+2.3.6.1.2 Blackboards
+Forablackboard, nomessage queuing occurs. Anymessage written toablackboard remains there
+untilthemessage iseither cleared oroverwritten byanewinstance ofthemessage. Thisallows
+sending processes todisplay messages atanytime, andreceiving processes toaccess thelatest
+message atanytime.
+TheCREATE_BLACKBOARD operation ereates ablackboard forusebyanyoftheprocess inthe
+partition. Atcreation, theblackboard‘s maximum message sizeisdefined.
+Aprocess canread amessage from ablackboard, display amessage onablackboard, orclear a
+blackboard.
+Rescheduling ofprocesses willoccur when aprocess attempts toread amessage from anempty
+blackboard. Thecalling process willbequeued foraspecified (aspartoftheservice call)duration
+ofreal-time. lfamessage isnotdisplayed inthatamount oftime, theOISwillautomatically remove
+theprocess from thequeue andputitintheready state (unless another process hassuspended it).
+When amessage isdisplayed ontheblackboard, theOISwillremove allwaiting processes from
+theprocess queue andwillputthem intheready state. Themessage remains ontheblackboard.
+When ablackboard iscleared, itbecomes empty.
+2.3.6.2 Semaphore, Events, andMutexes
+lnter-process synchronization isconducted using semaphores, events, andmutexes. Semaphores
+andmutexes provide controlled access toresources. Events support control flowbetween
+processes bynotifying theoccurrences ofconditions towaiting processes.
+2.3.6.2.1 Semaphores
+Thesemaphores defined inthisstandard arecounting semaphores, andarecommonly used to
+provide controlled access topartition resources. Aprocess waits onasemaphore togainaccess to
+thepartition resource, andthen signals thesemaphore when itisflnished. Asemaphore‘s value in
+thisexample indicates thenumber ofcurrently available partition resources.
+TheCREATE_SEMAPHORE operation creates asemaphore forusebyanyoftheprocess inthe
+partition. Atcreation, thesemaphore‘s initial value, maximum value, andqueuing discipline are
+defined.
+Processes waiting onasemaphore arequeued inFIFO orpriority order. Inthecase ofpriority
+order, forthesame priority, processes arealsoqueued inFIFO order (with theoldest waiting
+process being atthefront oftheFIFO).
+TheWAIT_SEMAPHORE operation decrements thesemaphore‘s value ifthesemaphore isnot
+already atitsminimum value ofzero. Ifthevalue isalready zero, thecalling process mayoptionally
+bequeued untileither thesemaphore issignaled oruntil aspecified (aspartoftheservice call)
+duration ofreal-time expires.
+TheSIGNAL_SEMAPHORE operation increments thesemaphore‘s value. Ifthere areprocesses
+waiting onthesemaphore, thequeuing discipline algorithm, FIFO orpriority order, willbeapplied to
+determine which queue process willreceive thesignal. Signaling asemaphore where processes
+arewaiting increments anddecrements thesemaphores value inonerequest. Theendresult is
+there arestillnoavailable resources, andthesemaphore value remains zero.
+CopyrIghIARINC ndusIr~Ach,Min
+Prov~d byHSIAsttdt std., Oc.ns. wdttMINC lt,n...‘Di.hI beM‘~e GrotH &Co.KGUb.din9eoi9968393~4. Us,,Non,i.n.I,II..
+Nor.produdtdo Orn&v.rotiro p.m,tI.d otdhool hc.oafrom INS Not ~orR...b. 03I3G‘2020 015749 MDTARING SPECIFICATION 653, PART 1—Page 38
+2.0SYSTEM OVERVIEW
+Rescheduling ofprocesses willoccur when aprocess attempts towaitonazero value semaphore,
+andwhen asemaphore issignaled thathasprocesses queued onlt.
+When aprocess 15removed from thequeue, either bythesemaphore being signaled orbythe
+expiration ofthespecified time-out period, theprocess willbemoved intotheready state (unless
+another process hassuspended it).
+2.3.6.2.2 Events
+Anevent isacommunication mechanism which permits notification ofanoccurrence ofacondition
+toprocesses which maywaitforit.Anevent iscomposed ofabi-valued state variable (states called
+“up“and“down“) andasetofwaiting processes (initially empty).
+COMMENTARY
+Onthearrival ofanaperiodic message, areceiving process maysend a
+synchronous signal (event) toanother process.
+Processes within thesame partition canSET andRESET events andalsoWAIT onevents thatare
+created inthesame partition.
+TheCREATE_EVENT operation creates anevent object forusebyanyoftheprocesses inthe
+partition. Upon creation, theevent issetinthestate “down.“
+Toindicate occurrence oftheevent condition, theSET_EVENT operation iscalled tosetthe
+specified event intheupstate. Alloftheprocesses (unless suspended byanother process) waiting
+onthatevent arethen moved intotheready state, andprocess scheduling takes place.
+Thetransition ofwaiting processes totheready state should appear tobeatomic, sothatall
+processes areavailable forscheduling atthesame time. There isnoqueuing discipline assignment
+associated withevents. Theprocesses thatwere waiting onanevent willbeeligible forscheduling
+onapriority followed byFIFQ (from thetimetheprocess began waiting ontheevent) basis.
+TheRESET_EVENT Operation setsthespecified event inthestate “down.“
+TheWAIT_EVENT Operation moves thecalling process from therunning state tothewaiting state if
+thespecified event is“down“ andifthere isaspecified time-out thatisgreater than 0.Thecalling
+process goes onexecuting ifthespecifled event is“up“orifthere isaconditional wait(event down
+andtime-out isequal to0).
+2.3.6.2.3 Mutexes
+Mutex services aresupported. Amutex isasynchronization object commonly used tocontrol
+access topartition resources. Only oneprocess atatimecanown aspecific mutex. Each mutex
+includes apriority value thataprocess‘s current priority israised towhen themutex isobtained.
+When aprocess releases amutex, thecurrent priority oftheprocess istypically restored tothe
+process priority value ithadwhen itobtained themutex. Ifthepriority ofaprocess ismodified using
+SET_PRIORITY while ltowns amutex, itisrestored tothelastpriority value ltwassetto.
+Amutex must becreated using theCREATE_MUTEX operation during thepartition‘s initialization
+phase before itcanbeused. Aname, priority, andqueuing discipline aregiven atmutex creation.
+Thisname islocal tothepartition andisnotanattribute ofthepartition configuration table. The
+creation ofmutex (eg., names used, number ofmutexes) foronepartition hasnoimpact onthe
+creation ofmutexes forother partitions.
+Copflhi ARINC ndusfly Ac0~i0.s
+Prooid.d byIHSMaiidt „Met Ecen,. wOl,ARINC Ltwnnww.Diehl Detence GntH 8CoKGUb.ten9e1V9968393004 Unweoomiwnnteii..
+Noewptodncnicnor n&wo9ing pe,rnitied wohoot Ncense ttom IHS HoitotRen~e. 03)3012020 01:57.49 kCTARINC SPECIFICATION 653,PART 1—Page 39
+2.0SYSTEM OVERVIEW
+Aprocess obtains ownership ofamutex using theACQUIRE_MUTEX operation. Aprocess can
+ownatmost onemutex atatime (i.e., preventing potential deadlock issues when twoormore
+processes obtain aseries ofmutexes indifferent orders). When owning amutex, theprocess is
+prevented from blocking asaresult ofaservice call.
+Ifanother process attempts toobtain amutex thatisalready owned, theprocess isputonthe
+mutex‘s waiting queue. Processes waiting onamutex arequeued inFIFO orpriority order. Inthe
+case ofpriority order, forthesame priority, processes arealsoqueued inFIFO order (with the
+oldest waiting process being atthefrontofthe FIFO).
+Aprocess releases ownership ofamutex using theRELEASE_MUTEX operation. Each mutex
+incorporates alocking count. Aprocess must invoke RELEASE_MUTEX thesame number oftimes
+asitinvoked ACOUIRE_MUTEX forthemutex tobereleased. Aprocess canalsorelease
+ownership ofamutex using theRESET_MUTEX operation. Using thisoperation resuits inthe
+mutex‘s locking count tobesettoZero, immediately releasing theprocess from ownership.
+Aprocess canbetested forownership ofamutex using theGET_PROCESS_MUTEX_STATE
+operation. Iftheprocess owns amutex (including thepreemption lockmutex), thecorresponding
+identifier isreturned. Iftheprocess does notown amutex, avalue representing nomutex owned is
+returned.
+Other than theGET_PROCESS_MUTEX_STATE service, themutex services cannot beutilized
+withthepreemption lockmutex (anerror willbereturned ifattempted).
+2.4 Health Monitor
+Ingeneral, Health Monitor (HM) functions areresponsible forresponding toandreporting hardware,
+application, andOISsoftware errors andfailures. ARINC 653supports HMbyproviding HM
+configuration tables andanapplication level error handler process.
+TheHMhelps toisolate errors andtoprevent failures from propagating. Components oftheHMare
+contained within thefollowing software elements:
+•OIS —AllHMimplementations willusetheARINC 653OIS. The0/5uses theHM
+configuration tables torespond topre-defined faults.
+•Application Partitions —Where errors aresystem specific anddetermined from logic or
+calculation, application partitions may beused, passing error data tothe0/5viatheHM
+service calls ortoanappropriate system partition.
+•System Partitions —System partitions canbeused bytheplatform integrators forerror
+management.
+Figure 2.4illustrates theARINC 653HMdecision logic. Thedecision logic isfurther described in
+thefollowing subsections andSection 2.5.2.3. TheO/Sevaluates theerror based ontheHM
+decision logic andHMconfiguration tables. lfthe HMdecision logic determines thiserror hasbeen
+assigned tothispartition asaprocess level error andaprocess level error handler ispresent for
+thispartition (e.g., error handler created anduseoftheerror handler hasbeen enabled bythe
+partition being inNORMAL mode), theO/Swillactivate theprocess level error handler torun.
+When anerror handler iscreated during theinitialization phase, theerror handler hasnotyetbeen
+enabled. Errors thatoccur during theinitialization phase result intheenforcement oftheaction
+defined inthePartition HMtable forthedetected error.
+Cu07,iqI,IRINC I,dud.yAcOvdi.t
+P,ond.d byIHSMat*it und., hc.ns. w40ARINC Lic.n,n.DI.N DMørt. GmbH &CcKGUb.flnwfl0$0303~4. U.m.Nomn~I.,
+Nar.prod.~dnd 0,n~v,o~ p.,mdl.d mdhau, ‚osule 0cm HS Nc,~a, Rn.Is. Da‘3G‘2020 015740 bOTARINC SPECIFICATION 653, PART 1—Page 40
+2.0SYSTEM OVERVIEW
+COMMENTARY
+ltisimplementation dependent how theHMdecision processing andapplication of
+module andpartition recovery actions areenforced. Theexecution environment
+(e.g., processor privilege mode, partition context, process context switches) used for
+HMdecision processing isimplementation dependent.
+Errors mayoccur atthemodule, partition, orprocess level. These error levels aredescribed inthe
+following sections. Thelevel ofanerror isdefined inthemodule HM,multi-partition klMand
+partition HMtables inaccordance withthedetected error andthestate ofthesystem.
+COMMENTARY
+System-level errors andtheir reporting mechanisms areoutside thescope ofthis
+document. ltistheresponsibility ofthesystem integrator toensure thesystem-level
+error handling andlower-level error handling areconsistent, complete and
+integrated.
+Copyrghi ARIHC Indu,iry Acli.iii.n
+Provid.d byIHSModul und., tenne u4ih RINC
+No‚.prodnjciion 0,rsiworktg p.nrulted wdhneii iIcens. fioni IHSERROR DETECTED eV0/5
+ORRSISED 8VAPPLICATION
+Level =MODULE Level =PARTITION
+(Level =PARTITION) OR
+(Error Handler notpresent) OR
+(error caused byError Handle,)(Level =PROCESS) AND
+(Error Handle, ispresent) AND
+(error outslde Error Handle,)
+2.4.1 Error LevelsFigure 2.4 —HMDecision Logic
+LNennee°D~hI Deience GmbH &Ca.KGUbncd.9mvG968393~d Us.rNomiensiei..
+HoitorRenate. 03fl012020 01:57:49 MmARING SPECIFICATION 653, PART 1—Page 41
+2.0SYSTEM OVERVIEW
+2.4.1.1 Process Level Errors
+Aprocess level error impacts oneormore processes inapartition ortheentire partition. Examples
+ofprocess level errors are:
+•Application error raised byanapplication process
+•Illegal OISrequest
+•Process execution errors (stack overflow, memory violation, etc.)
+•Process notcompleting itsexecution cycle before itsdeadline
+TheHMwillnotviolate partitioning when handling process level errors.
+2.4.1.2 Partition Level Errors
+Apartition level error impacts onlyonepartition. Examples ofpartition level errors are:
+•Partition configuration table error during partition initialization
+•Partition initialization error
+•Errors thatoccur during process management
+•Execution errors caused bytheerror handler process
+TheHMwillnotviolate partitioning when handling partition level errors.
+2.4.1.3 Module Level Errors
+Amodule level error mayimpact allthepartitions within anintegrated module. Examples ofmodule
+level errors are:
+•Module configuration table error during integrated module initialization
+•Other errors during integrated module initialization (e.g., checksum error detected forone
+partition)
+•Errors during system-specific function execution
+•Errors during partition switching
+•Powerfail
+2.4.2 Error Detection andResponse
+Errors aredetected byseveral elements:
+•Hardware —memory protection violation, privilege execution violation, stack overflow, zero
+divide, timer interrupt, I/Oerror
+•OIS —configuration, deadline
+•Application —failure ofsensor, discrepancy inamultiple redundant output
+Thespecific listoferrors andwhere theyaredetected isimplementation specific.
+Error response depends onthedetected error andontheoperational state inwhich theerror is
+detected. Theoperational state ofthesystem (core module initialization, system-specific function,
+partition switching, partition initialization, process management, process execution, etc.) is
+managed bytheO/S. Theresponse toerrors ineach operational state isimplementation
+dependent. Forexample, ahardware failure affecting acore module I/Ocould either cause theOIS
+toshutdown allthepartitions immediately orsignal theproblem tothepartition onlywhen a
+C0PyI9hIARINC ndunl4Aclv;l.n
+Provld.d byIHSManldl ‚oder lan,. wehPRINC L.c,ns..‘DiehI 0.l.nc. Ge,bN &Co.KGUbedin9enl9988393~4. U.el.N000nnwlb.
+Nalsprtdudbn 0,r*twodlelg permin.d wdhad hc.fee VomINS NotaRn,l.. 03130,202001.51-49 MDTARINC SPECIFICATION 653,PART 1—Page 42
+2.0SYSTEM OVERVIEW
+process ofthispartition would usethefailing I/Odevice. Thesystem integrator chooses theerror
+management policy.
+2.4.2.1 Process Level Error Response Mechanisms
+Responses toprocess level errors aredetermined bytheapplication programmer using aspecial
+(highest priority, noprocess identifier) process ofthepartition referred toastheerror handler
+process. Theerror handler process isactive (i.e., present) inNORMAL mode only. Theerror
+handler process canidentify theerror andthecausing process viatheGET_ERROR_STATUS
+service andthen takes therecovery action attheprocess level (eg., stopfollowed bystart process)
+oratthepartition level(eg., setpartition mode toIDLE, COLD_START, orWARM_START). An
+error code isassigned toseveral process level errors (e.g., numeric error corresponds tooverflow,
+divide byzero, floating-point underflow, etc.). Tomaintain application portability, error codes are
+implementation independent. Theprocess level error codes andexamples ofeach arelisted below:
+•Deadline_Missed —process deadline violation
+•Application_Error error raised byanapplication process
+•Numeric_Error during process execution, error types ofoverflow, divide byzero, floating
+point error
+•Illegal_Request illegal O/Srequest byaprocess
+•Stack_Overflow process stack overflow
+•Memory_Violation during process execution, error types ofmemory protection, supervisor
+privilege violation
+•Hardware_Fault during process execution, error types ofmemory parity, I/Oaccess error
+•Power_Fail notification ofpower interruption (e.g., tosave application specific state data)
+COMMENTARY
+Some process level errors prevent theprocess from being eligible forscheduling
+(ieresult intheprocess going totheFaulted state; seeSection 2.3.2.2.1 1).
+Thesetofprocess level errors included inthiscategory arereferred toasfatalerrors
+andresult intheprocess being settothefaulted state.
+Typically, memory violations, stack overflows, andnumeric errors caused bya
+process arefatal errors. Illegal requests andhardware faults caused byaprocess
+may alsobeconsidered fatalerrors (implementation dependent).
+Power failures generally willbeasynchronous totheactive partition schedule (i.e.,
+generally noassurance which partition timewindow theevent willoccur in).Handling
+ofapower failure asaprocess level error mayrequire power hold-up capabilities
+thatcancover multiple partition timewindows (ietohold uppower until the
+partition snext time window becomes active). Power hold-up capabilities are
+module dependent.
+Ifanerror handler process does notexist within apartition, then thepartition level error response
+mechanism isinvoked bytheO/S.
+Process level errors thatoccur inside theerror handler process arealways promoted topartition
+Ievel (irrespective oftheHMconfiguration) andconsequently handled bythepartition level error
+response mechanisms. Theerror handler process failing during itsexecution cycle toobtain the
+identification ofatleast onecausing process viatheGET_ERROR_STATUS service willalsobe
+promoted tothepartition level (Illegal_Request).
+Copyii~hl ARINC lnduwykfr‘iLiøs
+Pro‘.ld.d byINSM,,*iI und., Ii,.,,. r,41hARINC Lb.ns...Di.hI O,I.nc,GmbOi 8Cc.KGUbmIng.V99€8393~4. Us.,Nonu.n,Id..
+Homproduclknor n.Nuoddrg pe,rnitl.d .ilhoul Ocons, (rom IHS Hoi1°‘R,si,. 03I3a~O2O 01:57:40 (~TARINC SPECIFICATION 653, PART 1—Page 43
+2.0SYSTEM OVERVIEW
+COMMENTARY
+ltispossible foranapplication within apartition tofailinsuch awaythattheerror is
+notcorrectly reported, ornotreported atall,bytheapplication itself (e.g., theerror
+handler process). Thesystem integrator mayneed toaccount forthisintheoverall
+system design (rate monitors, watchdog timers, etc.).
+2.4.2.1.1 Process Level HMwhen Partitions have Multiple Processor Cores
+Multiple processor cores assigned tothesame partition mayimpact theprocess level health
+monitoring function.
+Theerror handler process, when activated, isthehighest priority process thatcanbescheduled.
+Only oneinstance oftheerror handler process willrunatatime. Aservice (invocable during
+initialization) isprovided thatcontrols whether other processes arescheduled onother processor
+cores concurrently withtheerror handler process, including aprocess thathaslocked preemption.
+Aprocess thathascaused anerror (deadline overrun excepted) should notcontinue torunin
+parallel withtheerror handler process. Such processes (processes thatraise application errors are
+accepted) aresettobeinthefaulted state.
+When apartltion isassigned asingle processor core, theerror handler (being highest priority) will
+interrupt thecurrently running process, regardless ofwhether thisprocess caused theerror ornot.
+When apartition isassigned multiple processor cores, theCONFIGURE_ERROR_HANDLER
+service canbeused tocontrol thescheduling oftheerror handler process. Configuring theerror
+handler process toaspecif,c processor core willresult inthatprocessor corealways being utilized
+toruntheerror handler. Configuring theerror handler process to
+CORE_AFFINITY_NO_PREFERENCE means there isnopreference astowhich processor core is
+utilized. When CORE_AFFINITY_N0_PREFERENCE isutilized, ltisO/Simplementation
+dependent astohow aprocessor core isselected. Once selected, theerror handling process runs
+ontheselected processor core until itcompletes. Theerror handler process willhave adefault
+afflnity ofCORE_AFFINITY_N0_PREFERENCE.
+2.4.2.2 Partition Level Error Response Mechanisms
+Responses topartition level errors arehandled inthefollowing way:
+•The0/5looks uptheerror code response action intheHMconfiguration tables.
+•The0/Sperforms theresponse identified intheconfiguration table.
+2.4.2.2.1 Partition Level HMwhen Partitions have Multiple Processor Cores
+Thepartition level health monitoring enforces thepartition level error recovery actions (eg., idlethe
+partition, restart thepartition). Therecovery action willbeapplied against thepartition onall
+processor cores being used bythepartition (notjustagainst theprocessor corethatwasused to
+detect orprocess theerror). Processes within apartition could temporarily continue torunwhile the
+recovery action isbeing enforced (i.e.,enforcement oftherecovery action does notnecessarily
+occur instantaneously). When other processes temporarily continue torunontheother processor
+cores allocated tothepartition, the0/8prevents these processes from interfering withenforcement
+ofpartition level health monitoring actions.
+Cop1ol9hLARINC IndusflMtoitIos
+P,ov~.d byINSMr1,It under Ice,.. wdh~INC LIceos.,.Ot,hI O.(,rc. GmbH &Co.KGUber9ngeiV9968393~4. Us.,.NounensI.IIe.
+NOreproduoknor n.owoddrg p.rnII.d w4hoo, licen,. Irom INS Motor R.nk, 0113012020 01:57.49 MDTARING SPECIFICATION 653, PART 1—Page 44
+2.0SYSTEM OVERVIEW
+2.4.2.3 Module Level Error Response Mechanisms
+Responses tomodule level errors arehandled inthefollowing way:
+•TheOISlooks uptheerror code response action intheHMconfiguration tables.
+•The0/5performs theresponse identified intheconfiguration table.
+2.4.2.3.1 Module Level HMwhen Partitions have Multiple Processor Cores
+Themodule level health monitoring enforces themultiple module level error recovery actions (eg.,
+shutdown themodule, reset themodule). Therecovery action willbeapplied against theintegrated
+module onallprocessor cores associated withtheintegrated module (notjustagainst theprocessor
+corethatwasused todetect orprocess theerror). Processes within anactive partition could
+temporarily continue torunwhile therecovery action isbeing enforced (i.e.,enforcement ofthe
+recovery action does notnecessarily occur instantaneously). When other processes temporarily
+continue torunontheother processor cores allocated toanactive partition, the0/Sprevents these
+processes from interfering withenforcement ofmodule level health monitoring actions.
+2.4.3 Recovery Actions
+Recovery actions include actions atthemodule level, partition level andprocess level.
+Recovery actions atalllevels include thecapability toignore anerror. However, anerror
+should onlybeignored ifitdoes notleave module, partition, orprocess inanundefined
+state. Forinstance, ignoring memory violations mayleave thepartition inanundeflned
+state.
+2.4.3.1 Module Level Error Recovery Actions
+Therecovery action isspecifled foramodule error intheModule HMconfiguration table depending
+onsystem state. Possible recovery actions arelisted below:
+•Ignore
+•Shutdown theintegrated module
+•Reset theintegrated module
+•Recovery Actions deflned bytheimplementation (0/5 implementation dependent)
+TheOISmust support thecapability ofadding platform specific recovery actions.
+COMMENTARY
+Thecontext inwhich an0/5performs module level error recovery actions is
+implementation dependent.
+2.4.3.2 Partition Level Error Recovery Actions
+Therecovery action isspecified forpartition errors intheHMconfiguration tables. Foreach
+partition, theresponse fortheerror typetakes intoaccount thepartition behavior capability (re
+settable ornot,degraded mode, etc.). Therecovery actions arelisted below:
+•Ignore
+•Stop thepartition (IDLE)
+•Restart thepartition (COLD_START orWARM_START)
+•Recovery Actions defined bytheimplementation (0/5 implementation dependent)
+Copyng[d ARING fl~usflyAc~i*s
+Prooid.d byIHSMarsit under (cinse wIhARINC Lan,e.C.hI D.t.nc. GmbH &Co.KGUb.4ng.iV9968393~4. U*eNorn,.,sI.II,.
+No‚.~~oduction orneowodsing pennill.d w(hosjl ans. (rom HS Not(0,Resde. 0313W2020 01:57:49 MDIARING SPECIFICATION 653,PART 1—Page 45
+2.0SYSTEM OVERVIEW
+The0/8must support thecapability ofadding platform specific recovery actions.
+COMMENTARY
+Thecontext inwhich anOISperforms partition level error recovery actions is
+implementation dependent.
+2.4.3.3 Process Level Error Recovery Actions
+Theapplication supplier defines anerror handler process ofthepartition forprocess level errors.
+Possible recovery actions arelisted below:
+•Ignore, logthefailure buttake noaction
+•Ignore theerror ntimes before action recovery
+•Stop faulty process andre-initialize itfrom entry address
+•Stop faulty process andstartanother process
+•Stop faulty process (assume partition detects andrecovers)
+•Restart thepartition (COLD_START orWARM_START)
+•Stop thepartition (IDLE)
+•Attempt arecovery andresume thefaulty process
+COMMENTARY
+Resuming afaulty process thatcaused afatalerror (e.g., memory violation) will
+result intheexecution ofthesame instruction thatcaused theerror. Recovery of
+most fatalexceptions maynotbefeasible.
+When there isaprocess level error handler, recovery actions arealways performed
+inthecontext ofthepartition associated withtheerroneous process.
+TheHMdesign mayallow support forAdaexceptions, butthere ispotential for
+conflicts between theAdaruntime system andtheHM.
+2.5 Configuration Considerations
+ltisagoalofthisspecification todefine anenvironment thatallows fullportability andreuse of
+application source code. Applications must however beintegrated intoasystem configuration which
+satisfies thefunctional requirements oftheapplications andmeets theavailability andintegrity
+requirements oftheaircraft functions. Asingle authoritative organization willberesponsible forthe
+integration. Thisorganization willbeknown asthesystem integrator. Thesystem integrator could
+betheplatform supplier, theairframe manufacturer, athird party, oracombination ofall
+participants.
+Thesystem integrator isresponsible forallocating partitions tocore modules. Theresulting
+configuration should allow each partition access toitsrequired resources andshould ensure that
+each application‘s availability andintegrity requirements aresatisfied. Thesystem integrator should,
+therefore, know thetiming requirements, memory usage requirements, andexternal interface
+requirements ofeach partition tobeintegrated.
+ltistheresponsibility oftheapplication developer toconfigure theprocesses within apartition.
+Thesystem integrator should ensure thatallpartitions have access totheexternal data required for
+their correct execution. Thisdata ispassed around thesystem intheform ofmessages. Each
+Copflht ARINC PmlusI‘y AdMt~s
+Provid.d byIHS Ma,141 un&r Ocens. w~hARPNC Lic.ns..-Di,N D.0,nc. GntH &CoKGUb.,ngw,t9O68393~4. Uw.Norm.n.I,II,.
+NO‚eprc~udbn 0‘r.k,o,kIng p.rmIU.d w~hool Ic.n19 from HS Not ForRns~. OSGOGO2O 0157.49 MDTARING SPECIFICATION 653,PART 1—Page 46
+2.0SYSTEM OVERVIEW
+message should, therefore, beunique andidentifiable. From anapplication point ofview, theonly
+means ofidentifying amessage istheportidentifier, which islocal tothepartition. ltisthe
+responsibility ofthesystem integrator toensure thatmessage formats arecompatible between the
+sending andreceiving partitions.
+2.5.1 Configuration Information Required bytheIntegrator
+Toenable configuration ofpartitions onto core modules, theintegrator requires thefollowing
+information about each partition asaminimum:
+•Memory requirements
+•Period
+•Duration
+•Portattributes
+•Processor core requirements (when multiple logical processor cores areavailable)
+Each logical processor core isassociated with aunique physical processor core
+Useofthisinformation willallow thepartitions tobe allocated totheintegrated modules ina
+configuration which ensures thatthememory andtime requirements ofeach partition canbe
+satisfied. Thelocation ofpartitions onintegrated modules dictates theroutes ofmessages, andso
+thesystem integrator must alsoprovide themapping between nodes onthemessage paths.
+2.5.2 Configuration Tables
+Configuration tables arerequired bytheOISforensuring thatthesystem iscomplete during
+initialization andtoenable communications between partitions. Configuration tables arestatic data
+areas accessed bytheO/S. They cannot beaccessed directly byapplications, andtheyarenotpart
+ofthe OIS.
+XML isused todescribe theconfiguration asdiscussed inSection 5ofthisdocument. Appendices
+Gand Hdefine theXML schema thedata needed tospecify anyARINC 653configuration.
+XML schema isintegrated bytheARINC 653OISimplementers theschema fortheir
+implementation.
+2.5.2.1 Configuration Tables torSystem Initialization
+(This material deleted bySupplement 3.)
+2.5.2.2 Configuration Tables torInterpartition Communication
+(This material deleted bySupplement 3.)
+2.5.2.3 Configuration Tables forHealth Monitor
+TheHealth Monitor (HM) uses configuration tables tohandle each occurring error. These tables are
+theModule HMtable, Multi-Partition HMtables andPartition HMtables.
+FortheModule HMtable:
+•TheOISuses theModule HMtable when anerror isdetected outside apartition time
+window (e.g., during core module initialization, partition switch, etc.).
+•TheModule HMtable defines therecovery action (e.g., shutdown themodule, reset the
+module, etc.)assigned tomodule level errors detected outside apartition timewindow.
+Ccw1ghI ARING Indu,fry AtlMlie,
+P,o,4d.d byIHSM.tl uM., Ic.ns. MLhARING Uc.n,..uOi.hI Oder.,, GmbH &Co.KGUb.,~ng.&$068393~4. UnnHormrM.Ib.
+Ne‘.p‘ududbn mn.tw.u.ldng p.mul,.d u40.oul Cc.,.,. f,om IHS NulimR.,M,. 03~3a2O2O 0157:49 MOTARINC SPECIFICATION 653, PART 1—Page 47
+2.0SYSTEM OVERVIEW
+•Therecovery action issetaccording tothedetected error andthesystem state (e.g.,
+initialization, switching partition, etc.).
+•There isoneModule HMtable perintegrated module, anditisconfigured bytheintegrated
+module supplier.
+FortheMulti-Partition HMtables:
+•TheQISuses theMulti-Partition HMtable when anerror isdetected inside apartition time
+window.
+•TheMulti-Partition HMtable defines global behavior ofHMforasetofpartitions.
+•TheMulti-Partition HMtable defines theerror level (Module orPartition) assigned toerrors
+detected inside apartition timewindow.
+•When theerror isatmodule level, theMulti-Partition HMtable defines alsothemodule
+recovery action (e.g., shutdown themodule, reset themodule, etc.).
+•Theerror level andmodule recovery action (when applicable) areSetaccording tothe
+detected error. Since theMulti-Partition HMtable isused onlywhen onepartition isinside its
+timewindow, there isonlyonesystem state (i.e., partition execution).
+•There areoneormany Multi-Partition HMtables permodule, allofthem configured bythe
+system integrator. Each Multi-Partition HMtable isassigned tooneormany partitions.
+These assignments areconfigured also bythesystem integrator.
+ForthePartition HMtables:
+•TheOISuses thePartition HMtable when anerror isdetected inside apartition time
+window andthecorresponding Multi-Partition KMtable indicates thePartition level forthis
+particular error inthecurrent partition.
+•ThePartition HMtable defines local behavior ofHMforasingle partition.
+•ThePartition HMtable defines theerror level (Partition orProcess) assigned toerrors
+detected inside apartition timewindow.
+•ThePartition HMtable defines alsothepartition recovery actions (eg., stopthepartition,
+restart thepartition inwarm orcoldmode). Thispartition recovery action willbeperformed
+when theerror isatpartition level, andalsowhen theerror isatprocess level, butnoerror
+handler iscreated forthatpartition.
+•When theerror isatprocess level, thePartition HMtable defines alsotheassigned error
+codes (eg., APPLICATION_ERROR, NUMERIC_ERROR, etc.).
+•Theerror level, partition recovery action, anderror codes aresetaccording tothedetected
+error. Thelistoferror identifiers inthePartition HMtable isrestricted totheerrors which can
+beraised bythepartition itself (e.g., deadline missed, memory violation, etc.).
+•There isonePartition HMtable perpartition. Each table isconfigured bytherespective
+application supplier.
+2.6 Verification
+Thesystem integrator willberesponsible forverifying thatthecomplete system fulfills itsfunctional
+requirements when applications areintegrated andforensuring thatavailability andintegrity
+requirements aremet.Verification thatapplication software fulfills itsfunctional requirements willbe
+carried outbythesupplier oftheapplication.
+Thesystem integrator, through useofsupporting tools, willberesponsible forverifying thecontents
+ofthe configuration tables against thecapabilities supported bythecore modules (e.g., available
+memory, available processor cores) andthecapabilities required bytheapplications hosted onthe
+core modules.
+Cop~wr~I ARINC Ir,do.fty Ac~.ifl.,
+Pro,id.d by1115M,*4 und., ltsn.. w411 RINC Uc9Gn9t~9hI D.l.nc. GmbH &CaKGUb.ding.w5060393004. UW-NGlm.~Ne.
+Ha.pmdmdt~ Grnetmo,*in9 p.rwdl.d wllhoul lc.nn (rom IHS Hoi(o,R,&&., 0213020200157.49 MDTARING SPECIFICATION 653,PART 1—Page 48
+3.0SERVICE REQUIREMENTS
+3.0 SERVICE REQUIREMENTS
+3.1 Service Request Categories
+This section specifies theservice requests corresponding tothefunctions described inSection 2.0
+ofthis document. Therequests aregrouped intothefollowing major categories:
+1.Partition Management
+2.Process Management
+3.Time Management
+4.Memory Management
+5.Interpartition Communication
+6.Intrapartition Communication
+7.Health Monitoring
+Each service request hasasample specification written intheAPEX specification grammar. The
+service requests inthissection describe thefunctional requirements ofAPEX services. Thedata
+type names, service request names, parameter names, andorder ofparameters aredefinitive, the
+implementation isnot(i.e.,theorder oftheerror tests arenotdefined bythisstandard). Some data
+typedeciarations arecommon toallcategories, andareduplicated ineach ofthefollowing sections
+forclarity. Theexceptions areRETURN_CODE_TYPE andSYSTEM_TIME_TYPE, which are
+referenced from theother sections ofthisdocument.
+Inorder topreserve theintegrity ofinformation managed bytheservices, therequesting process is
+assumed tonever bepreempted during theexecution ofaservice, except atthescheduling points
+which areexplicitly mentioned inthesemantic description.
+When apartition isassigned multiple cores, multiple processes may runconcurrently onthe
+assigned cores. lfaprocess attempts toaccess anARINC 653object (eg., process, semaphore,
+port) orgroup ofobjects thatarealready being accessed byanother process, theprocess may
+temporarily notmake progress inorder toprevent theprocess from introducing object
+inconsistencies.
+Partition level objects required forcreate services may bestatically ordynamically allocated. Fora
+static system, theobject attributes ofthecreate service need tobechecked against the
+corresponding statically configured objects. Foradynamic system, theobject attributes need tobe
+checked forreasonableness (e.g., range checking) andnon-violation ofsystem limits (e.g.,
+sufficient memory available) before theobject iscreated.
+Since thisinterface may beapplied tolntegrated Modular Avionics (IMA), itdoes notinclude
+services (orservice requirements) which onlypertain toaspecific architecture design,
+implementation, orpartition configuration. This listofservices isviewed asaminimum setofthe
+total services which may beprovided bytheindividual systems.
+Theinterface defined inthisstandard provides theoperations necessary forbasic multi-process
+execution. Theinclusion ofextra services pertinent toaspecific system would notnecessarily
+violate thisstandard, butwould make theapplication software which uses these additional services
+lessportable.
+Theconvention followed forerror cases inthese service requests istonotspecify assignments for
+output parameters other than thereturn code. Implementers should beaware that, inmany cases,
+programming practices willrequire some value tobeassigned toalloutput parameters.
+COøyrI9uIt~INC Indu,IryAclivilies
+Pro.id.d byIHSM,roit und., hcons. roth RINC LIc.nro,.Oi.hI Defence GmbH &Co.KGUbsdingeni99883G3«t4. U~roNoo,T*nsl,l~.
+Ner.prndoclim, ern.Iwoddng p.rniu.d ‚.dhoul Im.,,. ‚ne,INS NotnurR.*i., 03,30,202001 57.49 MDTARINC SPECIFICATION 653,PART 1—PAGE 49
+3.0SERVICE REQUIREMENTS
+AdaandClanguage specifications forthetypes, records, constants, andservice request interfaces
+used inthissection aredeflned inAppendices Dand E.Unless specifically annotated as
+implementation dependent, thevalues specified inthese appendices should beimplemented as
+defined. ForC,theAPEX specifications willbeavailable viathe“ARINC653.h“ header file.
+Thedefinition ofARING 653NAME_TYPE isbased onan‘n-character array (i.e.,fixed length).
+COMMENTARY
+Toavoid unnecessary complexity intheunderlying OIS, there arenorestrictions on
+theallowable characters forNAME_TYPE. However, itisrecommended thatusage
+belimited toprintable characters. TheOISshould treat thecontents ofNAME_TYPE
+objects ascase insensitive.
+TheuseofaNULL character isnotrequired inanobject ofNAME_TYPE. fa
+NAME_TYPE object contains NULL characters, thefirstNULL character inthearray
+ofcharacters should beconsidered todefine theendofthename.
+3.1.1 Return Code Data Type
+This section contains thereturn code datatypedeclaration common toallAPEX services. The
+return codes arelisted only inthissection forclarity. Theallowable return codes andtheir
+descriptions are:
+NOERROR request valid and operation performed
+NO_ACTION system‘s operational status unaffected byrequest
+NOT AVAILABLE the request cannot beperformed irnmediately
+INVALIDPARAM parameter specifled inrequest invalid
+INVALIDCONFIG parameter specified inrequest incompatible with current
+configuration (eg asspecified bysystem integrator)
+INVALID MODE request incompatible with current mode ofoperation
+TIMED_OUT time-out associated with request has expired
+Thedistinction between INVALID_PARAM andINVALID_CONFIG isthatINVALID_PARAM
+denotes invalidity regardless ofthesystem‘s configuration whereas INVALID_CONFIG denotes
+conflict withthecurrent integrator-specified configuration andsomaychange according tothe
+degree ofconfiguration imposed. Note thatthesetting ofINVALID_PARAM maysometimes be
+redundant fostrongly typed languages.
+Thereturn code datatypedeclaration 1$:
+type RETURN CODE TYPE is (NOERROR,
+NO_ACTION,
+NOT AVAILABLE,
+INVALIDPARAM,
+INVALIDCONFIG,
+INVALID MODE,
+TIMEDOUT);
+3.1.2 OUT Parameters Values
+Thevalidity ofQUT parameters isdependent ontheRETURN_CODE value returned bythe
+considered service.
+Copyilght ARtNC Indo,Iry AcW.Oti.,
+Pro‘~d.d byHSMa~M „der V~nsew~mARtNC ltense•‘DieN Deffince GmbH &Co.KGUb.dnoea‘9968393004. US.,.NÖ,rn.rideb.
+No‚eprodudton or‚eteo~we pundll.d eeoot Uv..,.. from INS NottorRe.ato, 03‘3a2020 015749 MOTARINC SPECIFICATION 653, PART 1—Page 50
+3.0SERVICE REQUIREMENTS
+3.2 Partition Management
+This section contains types andspecifications related topartition management.
+3.2.1 Partition Management Types
+These types areused inpartition management services:
+type OPERATING MODE TYPE is(IDLE, COLD START, WARMSTART, NORMAL)
+type PARTITION IDTYPE isanumeric type;
+type LOCI< LEVEL TYPE isanumeric type;
+type START CONDITION TYPE is (NORMAL_START
+PARTITIONRESTART
+HMMODULERESTART
+UMPARTITIONRESTART);
+Where:
+NORMAL_START isanormal power—up.
+PARTITIONRESTART isdue toCOLD START or WARM START bythepartition
+itseif through the SET PARTITION MODE service. ltcould
+also bethrough anon—I-IM module action (eg. ‚aspart ofa
+Part 2service)
+UM_MODULE RESTART isarecovery action taken atmodule level bythe HM
+MMPARTITIONRESTART isarecovery action taken atpartition level bythe MM.
+TheNORMAL_START/PARTITION_RESTART canbesetifthere isamanual module/partition
+reset through external means.
+type PROCESSORCOREIDTYPE isanuineric type;
+type NUM CORES TYPE isanurneric type;
+type PARTITION STATUSTYPE isrecord
+PERIOD SYSTEM TIME TYPE;
+DURATION SYSTEM TIME TYPE;
+IDENTIFIER :PARTITION IDTYPE;
+LOCKLEVEL LOCKLEVEL TYPE;
+OPERATING MODE :OPERATING MODE TYPE;
+START CONDITION START CONDITION TYPE;
+N(JMASSIGNEDCORES :NUN CORES TYPE;
+end record;
+TheRETURN_CODE_TYPE iscommon toallAPEX services andisdefined inSection 3.1.1 ofthis
+document.
+TheSYSTEM_TIME_TYPE iscommon tomany APEX services andisdefined inSection 3.4.1 of
+thisdocument.
+3.2.2 Partition Management Services
+Thepartition management services are:
+GET PARTITION STATUS
+SET PARTITION MODE
+CopyiighI ARING InduoI4 AcLro es
+Pro,4d4 byINSMsrIdt onar licens. W4NARINC ~ta,sst.OisM Defrce GmbH 8Co.KGUb.dingembgOS3OJm4. UflteNonr[enol000.
+NOmprodu~on orn.kortiro perrniI~ wthoul I~nn. romsINS Not So,Bombe. OSiSG‘202001 57:49 MOTARING SPECIFICATION 653, PART 1—PAGE 51
+3.0SERVICE REQUIREMENTS
+3.2.2.1 GET_PARTITION_STATUS
+TheGET_PARTITION_STATUS service request isused toobtain thestatus ofthecurrent partition.
+procedure GET PARTITION STATUS
+(PARTITION STATUS out PARTITION STATUS TYPE
+RETURN CODE out RETURN CODE TYPE) is
+normal
+PARTITION STATUS =current value ofpartition Status;
+RETURN CODE =NOERROR
+end GET PARTITION STATUS;
+eturn codes forthisservice areexplained below.
+GET PARTITION STATUS
+Return Code Value Commentary
+NOERROR Successful completion
+3.2.2.2 SET_PARTITION_MODE
+TheSET_PARTITION_MODE service request isused tosettheoperating mode ofthecurrent
+partition tonormal after theapplication portion oftheinitialization ofthepartition iscomplete. The
+service isalsoused forsetting thepartition back toidle(partition shutdown) andtocoldstartor
+warm start (partition restart) when afault isdetected andprocessed.
+When operating mode issettoNORMAL themain process used during thepartition
+initialization mode does notcontinue torunafter completion ofthemode transition.
+procedure SET_PARTITION_MODE
+(OPERATING MODE in OPERATING MODE TYPE
+RETURN CODE out RETURN CODE_TYPE) is
+error
+when (OPERATING MODE does not represent anexisting mode) =>
+RETURN CODE =INVALIDPARAtI
+when (OPERATING MODE isNORMAL and current mode isNORNAL) >
+RETURN CODE =NOACTION
+when (OPERATING MODE isWARM_START and current mode isCOLD START) =>
+RETURN CODE :=INVALID MODE;
+normal
+set current partition soperating mode =OPERATING MODE
+if (OPERATING MODE isIDLE) then
+shut down thepartition
+endif;
+if (OPERATING MODE 15 WARM_START orOPERATING MODE 15COLD START) then
+inhibit process scheduling and switch back toinitialization mode;
+endif;
+if (OPERATING MODE isNORMAL) then
+set toREADY allpreviously started (not delayed) aperiodiC processes
+(unless the process was suspended);
+set release point ofall previously delay started aperiodic processes
+tothe system cloclc time plus their delay times;
+setfirst release points ofallpreviously started (not delayed) periodic
+processes tothepartition‘s next periodic processing start;
+setfirst release points ofallpreviously delay started periodic processes
+tothepartition‘s next periodic processing start plus their delay times;
+—-attheir release points, the processes are set toREADY (ifnot DORNANT)
+calculate the DEADLINETIME ofall non-dormant processes inthepartition;
+COPyiIQhL ARINC nduntry M~nd.,
+Provid.d byIHSMadn* und., license w49~iNC Lt.nn..~O,.N D.l.nc. GnH &Co KGUb.dirn0rV996U93~4. Us.r.Nnnn.nsn~
+NOisp,nd.aon 0‘r.lwod.ng p.rmln.d wdhos I~o.. 509 IHS Nolfn,R.s~. 0313012020 0*57.49 MOTARINC SPECIFICATION 653, PART 1—Page 52
+3.0SERVICE REQUIREMENTS
+—-aDEADLINE TIME calculation may cause anovertlow ofthe underlying
+—-clock ltthis occurs HMisinvoked with anillegal request error code
+set thepartition slock level tozero
+if(anerror handler process has been created) then
+enable the error handler process tor execution andfault processing
+endif
+activate the process scheduling
+endII
+RETURN CODE =NOERROR
+end SET PARTITION MODE
+The return codes torthis service are explained below
+SET PARTITION MODE
+Return Code Value Commentary
+NOERROR Successful completion
+INVALIDPARAM OPERATING MODE does not represent anexisting mode
+NO_ACTION OPERATING MODE isnormal and current mode isNORMAL
+INVALID MODE OPERATING MODE is WARM START and current mode is
+COLD START
+3.3 Process Management
+This section contains types andspecifications related toprocess management. Thescope ofa
+process management service isrestricted toapartition.
+3.3.1 Process Management Types
+These types areused process management services:
+type PROCESS IDTYPE is anumeric type;
+type PROCESS NAME TYPE isan—character string;
+type PRIORITY TYPE isanumeric type;
+type STACK SIZE TYPE isanumeric type;
+type LOCK_LEVEL_TYPE isanumeric type;
+type SYSTEM ADDRESS TYPE islanguage dependent;
+type PROCESS STATE TYPE is (DORMANT, READY, RUNNING, WAITING FAULTED)
+type DEADLINE TYPE is (SOFT, HARD);
+type PROCESS INDEX TYPE is anumeric type;
+type PROCESS ATTRIBUTE TYPE isrecord
+PERIOD SYSTEM TIME TYPE
+TIMECAPACITY SYSTEM TIME TYPE
+ENTRYPOINT SYSTEM ADDRESS TYPE
+STACKSIZE STACK SIZE TYPE
+BASE PRIORITY PRIORITY TYPE
+DEADLINE DEADLINE TYPE
+NAME PROCESS NAME TYPE
+end record
+type PROCESS STATUS TYPE isrecord
+DEADLINETIME SYSTEM TIME TYPE
+CURRENTPRIORITY PRIORITY TYPE
+PROCESSSTATE PROCESS STATE TYPE
+ATTRIBUTES PROCESS ATTRIBUTE_TYPE
+end record
+COPYnOhtARING IndusIryAc1~viWs
+Pro~i4.d byIHSMao ondor ocense wottARINC Liconsss.Di&4 DMnnce GmbH &Cc.KGUb941n994V9968393004 Usen~Nornh.Mwsb.
+Nompnoducoion ornsIwoaig pormitind w0000nil Itense Irom IHS NottorR..nls. 03i38‘2020 0157:49 ACTARINC SPECIFICATION 653,PART 1—PAGE 53
+3.0SERVICE REQUIREMENTS
+TheRETURN CODE TYPE iscommon toallAPEX services andisdefined inSection 3.1.1 ofthis
+document.
+TheSYSTEM_TIME_TYPE iscommon tomany APEX services andisdefined inSection 3.4.1 of
+thisdocument.
+3.3.2 Process Management Services
+Aprocess must becreated during thepartition initialization phase before itcanbeused.
+Theprocess management services are:
+GETPROCESSID
+GETPROCESSSTAT‘JS
+CREATEPROCESS
+SET PRIORITY
+SOS PENDSEL F
+SUSPEND
+RESUME
+STOPSELF
+STOP
+START
+DELAYED START
+LOCKPREEMPTION
+UNLOCKPREEMPTION
+GETMYI D
+INITIALIZEPROCESSCOREAFFINITY
+GET MYPROCESSORCOREID
+GET MY INDEX
+3.3.2.1 GET_PROCESSJD
+TheGET_PROCESS_ID service request allows aprocess toobtain aprocess identifier by
+specifying theprocess name.
+procedure GET_PROCESS_ID
+(PROCESS NAME in PROCESS NAME TYPE;
+PROCESSID out PROCESS IDTYPE;
+RETURN CODE :out RETURN CODE TYPE) is
+error
+when (there isnocurrent partition process named PROCESS NAME) =>
+RETURN CODE :—INVALIDCONFIG;
+normal
+PROCESSID unique identifier for the current partition assigned tothe
+process named PROCESS_NAME;
+RETURN CODE NOERROR;
+end GETPROCESSID;
+Thereturn codes forthisservice areexplained below.
+GETPROCESSID
+Return Code Value Commentary
+NO_ERROR Successful completion
+INVALIDCONFIG There isnocurrent partition process named PROCESS_NAME
+CopflO~ NRINC Indotky Ackwihs
+Pto~id.d byIHSMarkil ondar Ikonne nndth~PNC LIc.nnwO,.hI O.n.nc. Grr~H &Cc.KGUbedIngern~O68393~4. UnrNorn,.n.I.I~.
+NOr.p,od.jdbn Ornot.nonkino p.nnnlkd ~ndhwI hc.ns. korn IHS Notar~~. 0102001.5749 MOTARINC SPECIFICATION 653, PART 1—Page 54
+3.0SERVICE REQIJIREMENTS
+3.3.2.2 GET_PROCESS_STATLJS
+TheGET_PROCESS_STATUS service request returns thecurrent status ofthespecifled process.
+Thecurrent status ofeach oftheindividual processes ofapartition isavailable toallprocesses
+within thatpartition.
+Ifthisservice isinvoked onaprocess thatowns thepreemption lockmutex, thecurrent priority of
+theprocess willbereturned asthemaximum process priority.
+procedure GET PROCESS STATUS
+(PROCESSID :in PROCESS IDTYPE;
+PROCESS STATUS :out PROCESS STATUS TYPE;
+RETURN CODE out RETURN CODE TYPE) is
+error
+when (PROCESSID does notidentify anexisting process
+the current partiti n) =>
+RETURN CODE =INVAJJIDPARAM
+normal
+RETURN CODE =NOERROR
+PROCESS STATUS =current value ofprocess Status
+end GET PROCESS STATUS;
+Thereturn codes forthisservice areexplained below.
+GET PROCESS STATUS
+Return Code Value Commentary
+NOERROR Successful completion
+INVALIDPARAt4 PROCESS_ID does notidentify anexisting process
+thecurrent partition
+3.3.2.3 CREATE_PROCESS
+TheCREATE_PROCESS service request creates aprocess andreturns anidentifler thatdenotes the
+created process. Foreach partition, asmany processes asthepre-allocated memory space will
+support canbecreated. Thecreation ofprocesses (eg., names used, number ofprocesses) for
+onepartition hasnoimpact onthecreation ofprocesses forother partitions.
+Defining thePERIOD ofaprocess withanINFINITE_TIME_VALUE inherently defines anaperiodic
+process.
+Defining theTIME_CAPACITY ofaprocess withanINFINITE_TIME_VALUE inherently defines a
+process thatdoes nothave adeadline time (i.e.,willnotcause aDEADLINE_MISSED HMevent).
+Deadline times canbedefined forperiodic andaperiodic processes.
+procedure CREATE_PROCESS
+(ATTRIEUTES in PROCESS ATTRIBUTE TYPE
+PROCESSID out PROCESS IDTYPE
+RETURN CODE out RETURN CODE TYPE) is
+error
+when (insufficient storage capacity for the creation ofthe specified
+process ormaximum nuxnber ofprocesses have been created) >
+RETURN CODE =INVALIDCONFIG
+when (the process named ATTRIBUTES NAME isalready created
+the current partition) =>
+RETURN CODE =NOACTION
+when (ATTRIBUTES.STACK SIZE out ofrange) =>
+Copyngh( AR(NC Indinlry Acli,iili.s
+Pro‘.id.d byIHSM,rnit UM.r Mc.,,. wieARINC Licefls..~i.N Dwi,rc, GmbH &Co.KGUbedingeIV9968393~4 Us.,‘Nonn.nsl,II,.
+Nor.p.oducbon ernttcIdrm p.rmitl.d w$hooI Mcense from IHS NclSo,Rna~. 03130202001 S7:49 MDTARINC SPECIFICATION 653,PART 1—PAGE 55
+3.0SERVICE REQUTREMENTS
+RETURN CODE INVALIDPARAM;
+when (ATTRIBUTES.BASEPRIORITY out ofrange) =>
+RETURN CODE INVALIDPARAM;
+when (ATTRIEUTES PERIOD out ofrange) =>
+RETURN CODE =INVALIDPARAM;
+when (ATTRIBUTES.PERIOD isfinite (i.e., periodic process) and
+ATTRIBUTES.PERIOD isnot aninteger multiple ofpartition period defined
+inthe configuration tables) =>
+RETURN CODE :=INVALIDCONFIG;
+when (ATTRIBUTES.TIMECAPACITY out ofrange) ~>
+RETURN CODE :~INVALIDPARAM;
+when (ATTRIBUTES.FERIOD isfinite (ie.,periodic process) and
+ATTRIBUTES.TIMECAPACITY isgreater than ATTRIBUTES.PERIOD) >
+RETURN CODE INVALIDPARAM;
+when (operating mode isNORNAL) =>
+RETURN CODE :—INVALID MODE;
+normal
+create anew process with the process attributes set toATTRIBUTES;
+set the process state toDORMANT;
+initialize process context, unique process index, and stack;
+set the process‘s core affinity tothedefault process core affinity value;
+PROCESSID :=unique identifier assigned bythe O/S tothe created process;
+RETURN CODE NOERROR;
+end CREATE PROCESS;
+Thereturn codes forthisservice areexplained below.
+CREATEPROCESS
+Return Code Value Cornmentary
+NOERROR Successful completion
+INVALID CONFIG Insufficient storage capacity for the creation ofthe
+specified process ormaximum number ofprocesses have
+been created
+NO_ACTION The process named ATTRIBUTES NAME isalready created
+the current partition
+INVALIDPARAM ATTRIBUTES.STACK_SIZE out ofrange
+INVALIDPARAM ATTRIBUTES.BASEPRIORITY out ofrange
+INVALIDPARAM ATTRIBUTES.PERIOD out ofrange
+INVALID CONFIG ATTRIBUTES.PERIOD isfinite and ATTRIBUTES.PERIOD isnot
+aninteger multiple ofpartition period defined inthe
+configuration tables
+INVALIDPARAM ATTRIBUTES.TIMECAPACITY out ofrange
+INVALIDPARAM ATTRIBUTES.PERIOD isfinite and ATTRIBUTES.TIME CAPACITY
+isgreater than ATTRIBUTES.PERIOD
+INVALID_MODE Operating mode isNORMAL
+3.3.2.4 SET_PRIORITY
+TheSET_PRIORITY service request changes aprocess‘s current priority. Iftheprocess‘s current
+state isready, theprocess isconsidered ashaving been intheready state withthesetpriority for
+theshortest elapsed time (i.e.,other processes atthesame priority eligible forthesame processor
+core(s) willbeselected torunbefore thisprocess).
+Process rescheduling isperformed after thisservice request onlywhen theprocess whose priority
+ischanged isintheready orrunning state.
+Copyi~hI ARINC Indu.Lry Acli.its.
+P,ovld.d byINSMafl.I unc.n,.,40‘ARINC L~nn.OI.M Oslence GmbH &Co. KGUb.dinQeß‘9968393~4. UmmNonn.nSI.Oe,
+NOr.prcduclion ornaOwod,ing p.Irn‘II.d wiSont Ocerom Irom INS NollorR..&e, 0300‘2020 015749 MDTARINC SPECIFICATION 653, PART 1—Page 56
+3.0SERVICE REQUIREMENTS
+COMMENTARY
+Iftheprocess iswaiting onaresource, theprocess queue forthatresource mayor
+may notbereordered based onthenewpriority. Therefore, from theviewpoint of
+portability, applications should notrelyonthereordering oftheprocess queue.
+procedure SET_PRIORITY
+(PROCESSID in PROCESS IDTYPE
+PRIORITY in PRIORITY TYPE
+RETURN CODE out RETURN CODE TYPE) is
+error
+when (PROCESSID does notidentify anexisting process
+thecurrent partition) =>
+RETURN CODE =INVALIDPARAM
+when (PRIORITY isout ofrange) =>
+RETURN CODE =INVALIDPARAM
+when (specified process isinthe DORMANT state) =>
+RETURN CODE =INVALID MODE
+normal
+if(the specified process owns amutex) then
+——current priority ofthe process cannot bemodified without
+——impacting mutex properties
+set the retained priority ofthe specif led process toPRIORITY
+else
+set the current priority ofthe specified process toPRIORITY
+endif
+check for process rescheduling
+——Arunning process may bepreempted bythe process whose priority
+——was modif ledifthe running process does not have preemption locked
+RETURN CODE —NOERROR
+end SET PRIORITY;
+Thereturn Codes forthisservice areexplained below.
+SET PRIORITY
+Return Code Value Cornmentary
+NOERROR Successful completion
+INVALID_PARAM PROCESS_ID does notidentify anexisting process
+INVALIDPARAM PRIORITY isout ofrange
+INVALID_MODE The specified process isinthe DORNANT state
+3.3.2.5 SUSPEND_SEL.F
+TheSUSPEND_SELF service request suspends theexecution ofthecurrent process, ifaperiodic.
+Theprocess remains suspended untiltheRESUME service request isissued orthespecified time
+outvalue expires.
+Periodic processes cannot besuspended.
+COMMENTARY
+faprocess suspends (using SUSPEND service) analready self-suspended
+process, lthasnoeffect.
+Copyiighl ARINC Ind.sI~MIiviO.,
+Pr.s~d.d byIHSMarkt aMar licenta WInIARINC Loann..OiehI Delence GmbH Co.KGUbe‘liflg.n‘9968393004, Uo,,NomienMene.
+Noep icnknorn&wo,Idng permitl.d weoot ricensa korn IHS Nolfor Renate. 03i3W2020 OtSl:49 lOTARINC SPECIFICATION 653, PART 1—PAGE 57
+3.0SERVICE REQUIREMENTS
+procedure SUSPEND_SELF
+(TIMEOUT in SYSTEM TIME TYPE;
+RETURN CODE out RETURN CODE TYPE) is
+error
+when (current process owns amutex er
+current process iserror handler process) =>
+RETURN CODE =INVALIDf.IODE;
+when (TIMEOUT isout ofrange) =>
+-—eg caiculation causes overtlow ofunderlying clock
+RETURN CODE =INVALIDPARAM
+when (process isperiodic) =>
+RETURN CODE =INVALID MODE
+normal
+je(TIMEOUT iszero) then
+RETURN CODE NOERROR;
+else
+set the current process‘s state toWAITING;
+je(TIMEOUT isnotinfinite) then
+initiate atime counter with duration TIMEOUT
+endje
+ask tor process scheduling
+——The current process isblocked andwill return inREADY state
+——byexpiration oftime-out orby RESUME Service request from another
+-—processif(expiration ofthe time—out) then
+RETURN CODE =TIMEDOUT
+else --RESUME service request from another process
+RETURN CODE =NOERROR
+RESUME Service request will stop the time counter.
+endje
+endif
+end SUSPENDSELF
+Thereturn codes forthisservice areexplained below.
+SUSPENDSELF
+Return Code Value Comrnentary
+NOERROR Resumed byanother process orTIMEOUT iszero
+INVALID MODE Current process owns amutex or
+current process iserror handler process
+INVALIDPARAM TIMEOUT isout ofrange
+INVALID MODE Process jsperiodic
+TIMED OUT The specified time—out jsexpired
+3.3.2.6 SUSPEND
+TheSUSPEND service request allows thecurrent process tosuspend theexecution ofany
+aperiodic process except itseif. Thesuspended process remains suspended untilresumed by
+another process. lfthe process ispending inaqueue atthetime it15suspended, itisnotremoved
+from thatqueue. When ltisresumed, ltwillcontinue pending unless ithasbeen removed from the
+queue (byavailability oftheresource itwaswaiting onorexpiration ofatime-out) before theendof
+itssuspension. Iftheprocess iswaiting onatimed-wait time counter, theprocess willcontinue to
+waitonthetimecounter when itisresumed unless thetimecounter hasexpired.
+Periodic processes cannot besuspended.
+COP1i9M ~INC Irduolq Ach,4~s
+P,ooid.d byIHSMrn*iI und.r kiros rojihARING L.c.,s...D.hI D.f.nc. GmbH &Cc.KGUb.rIi.g,1V9986393«(4. us.,‘Non*nsl.Il,,
+Not~U~ =Mt.‘0~flg p.n~It.d WÜbO.I Ice,.. (rom IHS Nol~rRad. 03G51020 0157.49 MUTARINC SPECIFICATION 653,PART 1—Page 58
+3.0SERVICE REQUIREMENTS
+COMMENTARY
+Ifaprocess suspends analready suspended process, ithasnoeffect.
+Aprocess maysuspend anyother process asynchronously, including arunning
+process (feasible when apartition isallocated twoormore processor cores). Though
+thispractice isnotrecommended, there may bepartitions thatrequire thiscapability.
+Thestate ofaprocess obtained using theGET_PROCESS_STATUS service may
+have changed inbetween calling theservice andattempting tosuspend theprocess.
+procedure SUSPEND
+(PROCESSID in PROCESS IDTYPE;
+RETURN CODE out RETURN CODE TYPE) is
+error
+--Cannot suspend aprocess that has called LOCI< PREEMPTION orACQUIRE_MUTEX
+when (PROCESS_ID isaprocess that owns amutex oriswaiting onamutex‘s
+queue) =>
+RETURN CODE =INVALID MODE
+when (PROCESSID does notidentify anexisting process
+the current partition oridentifies thecurrent process) =>
+RETt.JRN CODE =INVALID PARAM
+when (the state ofthe specified process isDORMANT orFAULTED) =>
+RETURN CODE =INVALID MODE
+when (specified process isperiodic) =>
+RETURN CODE =INVALID MODE
+normal
+if(specified process has already been suspended
+either through SUSPEND orSUSPEND_SELF) then
+RETURN CODE NOACTION
+else
+set the specified process state toWAITING
+RETURN CODE =NOERROR
+endif
+end SUSPEND;
+Thereturn codes forthisservice areexplained below.
+SUSPEND
+Return Code Value Commentary
+NO_ERROR Successful completion
+NO_ACTION Specified process has already been suspended
+INVALIDPARAM PROCESSID does notidentify anexisting process
+the current partition or
+identifies the current process
+INVALID MODE PROCESSID 158process that currently owns amutex or
+iswaiting on amutex‘s queue
+INVALID MODE The state ofthe specified process 15DORMANT orFAULTED
+INVALID_MODE Specified process 15periodic
+Ctpyhghl ARINC Irdijoliy AcliiiiIi.s
+PrO.id.d byIHSMadlil undar ~CaflSa mdbARIHC Lic.ns..=Di.N Del.nc. GmbH &CoKGUbm0ngeiV9968393004. UwmHorm.n.l.Il..
+NOmpmduaon 0€n.Nrot*lr~ p.rnill.d ‚.‘lhotd lan.. (rom IHS Not~rReal.. O1‘30.2020 OI;57:49 MOTARINC SPECIFICATION 653, PART 1—PAGE 59
+3.0SERVICE REQUIREMENTS
+3.3.2.7 RESUME
+TheRESUME service request allows thecurrent process toresume apreviously suspended
+process (i.e.,viaSUSPEND orSUSPEND_SELF services). Theresumed process willbecome
+ready ifltisnotwaiting onaprocess queue (eg., resource associated withaqueuing port, buffer,
+semaphore, event) oratimedelay associated withtheTIMED_WAIT service.
+Aperiodic process cannot besuspended, soitcannot beresumed.
+procedure RESUME
+(PROCESSID in PROCESS IDTYPE;
+RETURN CODE out RETURN CODE TYPE) is
+error
+when (PROCESSD does notidentify anexisting process
+the current partition oridentifies thecurrent process) —>
+RETURN CODE =INVALID PARAM;
+when (the state ofthe specified process isDORMANT) —>
+RETURN CODE :—INVALID MODE;
+when (PROCESSID identifies aperiodic process and isnot FAULTED) =>
+RETURN CODE INVALID MODE;
+when (identified process isnot asuspended process andisnot FAULTED) =>
+RETURN CODE NO_ACTION;
+formal
+je(the specified process was suspended with atime—out) then
+stop the affected time counter;
+endifif(the specified process isnot waiting on aprocess queue orTIMEDWAIT
+turne delay orDELAYED START time delay) then
+set the specified process state toREADY;
+check for process rescheduling;
+-—Arunning process rnay bepreempted bythe resurned process
+-—ifthe running process does not have preemption iocked
+endje;
+RETURN CODE :—NOERROR;
+end RESUME;
+Thereturn codes forthisservice areexplained below.
+RESUME
+Return Code Value Cominentary
+NOERROR Successful completion
+NO_ACTION Identjfjed process isnot asuspended process and isnot
+FAULTED
+INVALIDPARAM PROCESSID does notidentify anexisting process
+the current partition or
+identifies the current process
+INVALID MODE The state ofthe specified process jsDORMANT
+INVALID MODE PROCESS IDidentjfies aperiodic process and isnot
+FAULTED
+COPyI9htARINC IndusIryMl,.ltt,
+Pro,ld.d byIHSMarta uM.r Ice,.. wittARINC I.kn...OeN D.0,r.c. GmbH CoKGUb.rIn9eß‘9905393204, U....No,nrr~de.
+No‚epr.dod~,,r ..Iwo4ln~ p.m.o.d wihad Ice... ‚rom IHS HoIlorR..eI.. 03130.2020015749 OCrARINC SPECIFICATION 653, PART 1—Page 60
+3.0SERVICE REQUIREMENTS
+3.3.2.8 STOP_SELF
+TheSTOP_SELF service request allows thecurrent process tostop itseif. Noreturn code isreturned
+totherequesting process procedure.
+Theerror handler process uses thisservice when ithascompleted processing reported process-level
+errors.
+COMMENTARY
+Thisservice should notbecalled when thepartition isintheWARM_START orthe
+COLD_START mode. Inthiscase, thebehavior ofthisservice isnotdeflned.
+procedure STOP SELF is
+normal
+if(current process owns the preemption lock mutex) then
+set thepartition‘s LOCKLEVEL counter tozero (ie enable preemption
+release thepartition‘s lock preemption mutex per RESETMUTEX semantics
+ignoring PREEMPTIONLOCKMUTEX error check
+endif
+set the current process state toDORMANT
+prevent the specified process from causing adeadline overrun fault
+check for process rescheduling
+——Aprocess interrupted bythe error handler process may continue
+——running especially ifithad preemption locked
+end STOP SELF;
+3.3.2.9 STOP
+TheSTOP service request makes aprocess ineligible forprocessor resources untilanother
+process issues theSTART service request.
+Thisservice allows thecurrent process tostoptheexecution ofanyprocess except itself. When a
+process stops another process thatiscurrently waiting inaprocess queue, thestopped process is
+removed from theprocess queue.
+COMMENTARY
+Stopping (e.g., bytheerror handler) aprocess thathaspreemption Iocked may
+result inimproper operation oftheapplication. Stopping aprocess does notimpact
+thestate ofsampling ports, queuing ports, semaphores, events, blackboards, and
+buffers. Iftheprocess being stopped owns amutex other than thepreemption lock
+mutex, themutex isnotreleased. Themutex canbereleased byanother process
+(e.g., theerror handler process) using theRESET_MUTEX service.
+procedure STOP
+(PROCESSID in PROCESS IDTYPE;
+RETURN CODE :out RETURN CODE TYPE) is
+error
+when (PROCESSID does notidentify anexisting process
+the current partition oridentifies thecurrent process) =>
+RETURN CODE =INVALIDPARAM
+when (the state ofthe specified process isDORNANT) =>
+RETURN CODE NOACTION
+Copy.10h1 ARINC Ind,oI,y Mfrgjti.s
+Prooid.d byIHSMw*It ‚inder license wah RINC lteflleenOiehl O&.nC. GotH 8Co.KGUbe‘fingeiVoOeS3ma%4. Un,n~Normer.teIIe.
+140rep‘oduchcnor neteo.ldrg p.r,ndIt.d vdlhool license (rom IHS Idol(orRenele. 03430Q020 OI:57;49 MDTARINC SPECIFICATION 653, PART 1—PAGE 61
+3.0SERVICE REQUIREMENTS
+normal
+je(specified process owns the preemption lock mutex) then
+set thepartition‘s LOCI<LEVEL counter toZero (i.e., enable preemption);
+release thepartition‘s lock preemption mutex per RESET MUTEX semantics
+ignoring PREEMPTION_LOCK MUTEX error check;
+endif;
+set the specified process state toDORMANT;
+if(specified process iswaiting inaprocess queue) then
+remove the process from the process queue;
+endif;
+stop any time counters associated with the specified process;
+prevent the specified process from causing adeadline overrun fault;
+ask for process scheduling;
+——process could have been running onanother core
+RETrJRN CODE NOERROR;
+end STOP;
+Thereturn codes forthisservice areexplained below.
+STOP
+Return Code Value Commentary
+NOERROR Successful completion
+INVALID PARAM PROCESSID does notidentify anexisting process
+the current partition or
+identifies the current process
+NOACTION The state ofthe specified process isDORMANT
+3.3.2.10 START
+TheSTART service request initializes allattributes ofaprocess totheir default values andresets
+theruntime stack oftheprocess. Ifthepartition isintheNORMAL mode, theprocess‘ deadline
+expiration time andnextrelease point arecalculated.
+Thisservice allows thecurrent process tostarttheexecution ofanother process during runtime.
+procedure START
+(PROCESSID in PROCESS IDTYPE
+RETIJRN CODE :out RETURN CODE TYPE) is
+error
+when (PROCESSID does notidentify anexisting process
+the current par ) >
+RETURN CODE =INVALID FARA?‘!;
+when (the state ofthe specified process isnot DORMANT) =>
+RETURN CODE =NO_ACTION;
+when (DEADLINETIME calculation isout ofrange) =>
+-—eg.,caiculation causes overflow ofunderlying clock
+RETURN CODE =INVALIDCONFIG
+normal
+if(the process isanaperiodic process) then
+—-Start aperiodic process
+set the current priority ofspecified process toits base priority;
+reset context and stack;
+if(operating mode isNORMAL) then
+set the specified process state toREADY;
+set the DEADLINE TIME value for the specified process to
+(current system ciock plus TIMECAPACITY);
+CopyhghIiRINC Indust~M5.4~es
+Pro4id.d byIHSMai50 und.r 50.OOe wAhARINC ljc.M...Di&4 D.I.,c. GmbH &CaKGUb,,5n9.ro‘9068393%4. Use,.00n,waiaPb.
+NOmprodudinor natwod*ig p.rmItI.d wdhout Icen,. from HS NottorRnsie, 03438‘2020 01.57.49 ICi‘
